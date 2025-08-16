@@ -14,6 +14,11 @@ const preview: Preview = {
       // 문서에서도 폰트 적용
       inlineStories: false,
     },
+    options: {
+      storySort: {
+        order: ['*'], // 모든 스토리를 알파벳 순으로 정렬
+      },
+    },
   },
   globalTypes: {
     theme: {

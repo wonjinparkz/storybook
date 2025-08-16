@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import GovernmentFooter from './GovernmentFooter';
 
 const meta: Meta<typeof GovernmentFooter> = {
-  title: 'Government/1090. Header & Footer/Footer',
+  title: 'Government/B. Header & Footer/Footer',
   component: GovernmentFooter,
   parameters: {
     layout: 'fullscreen',

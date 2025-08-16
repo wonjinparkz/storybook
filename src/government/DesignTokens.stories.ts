@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import DesignTokens from './DesignTokens';
 
 const meta: Meta<typeof DesignTokens> = {
-  title: 'Government/1100. Design System/Design Tokens',
+  title: 'Government/A. Design System/Design Tokens',
   component: DesignTokens,
   parameters: {
     layout: 'fullscreen',

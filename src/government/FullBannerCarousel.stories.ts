@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import FullBannerCarousel from './FullBannerCarousel';
 
 const meta: Meta<typeof FullBannerCarousel> = {
-  title: 'Government/1080. Carousel/Full Banner Carousel',
+  title: 'Government/C. Carousel/Full Banner Carousel',
   component: FullBannerCarousel,
   parameters: {
     layout: 'fullscreen',
