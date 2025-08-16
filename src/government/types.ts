@@ -153,3 +153,23 @@ export interface FullBannerCarouselProps {
   loop?: boolean;
   backgroundColor?: string;
 }
+
+// Icon Features Carousel Types
+export interface IconFeatureItem {
+  id: string;
+  title: string;
+  description: string;
+  url: string;
+  iconClass?: string;
+  iconSvg?: string;
+}
+
+export interface IconFeaturesCarouselProps {
+  title: string;
+  items: IconFeatureItem[];
+  swiperId: string;
+  autoplay?: boolean;
+  autoplayDelay?: number;
+  speed?: number;
+  className?: string;
+}
