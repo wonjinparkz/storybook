@@ -85,15 +85,6 @@ export const Default: Story = {
   },
 };
 
-export const WithoutMoreLink: Story = {
-  args: {
-    slides: mockSlides,
-    swiperId: 'banner-no-more',
-    autoplayDelay: 4000,
-    speed: 600,
-    loop: true,
-  },
-};
 
 export const FastTransition: Story = {
   args: {
