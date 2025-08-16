@@ -118,8 +118,14 @@
 .quick-services .drop-menu {
   min-width: 220px;
   right: auto;
-  left: 0;
-  transform-origin: left top;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  transform-origin: center top;
+}
+
+.related-sites .drop-menu.show,
+.quick-services .drop-menu.show {
+  transform: translateX(-50%) translateY(0);
 }
 
 /* 아이콘이 있는 링크 */
