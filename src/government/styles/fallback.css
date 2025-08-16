@@ -1,0 +1,87 @@
+/* Government Styles - Missing Asset Fallbacks */
+
+/* 누락된 이미지들에 대한 fallback 처리 */
+
+/* 기본 아이콘 fallback - 컬러 박스로 대체 */
+.government-component [class*="ico_"]:not([style*="background-image"]) {
+  position: relative;
+}
+
+.government-component [class*="ico_"]:not([style*="background-image"])::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #dee2e6;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+/* 특정 누락 이미지들에 대한 CSS fallback */
+.government-component [style*="ico_arr_func_20.svg"]::before,
+.government-component [style*="ico_cal_dropdown.svg"]::before,
+.government-component [style*="ico_cal_move.svg"]::before {
+  content: "→";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #6c757d;
+  color: white;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+/* 로그인 관련 아이콘들 fallback */
+.government-component [style*="ico_login_certify"]::before {
+  content: "🔐";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+}
+
+/* SNS 아이콘들이 없는 경우 기본 처리 */
+.government-component [style*="ico_sns_"]::before {
+  content: "📱";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+}
+
+/* 이미지 로딩 실패 시 대체 텍스트 */
+.government-component img[src*="ico_"]:not([alt]) {
+  font-size: 0;
+}
+
+.government-component img[src*="ico_"]:not([alt])::after {
+  content: "🖼️";
+  font-size: 16px;
+  display: inline-block;
+}
+
+/* CSS 이미지 로딩 실패 대응 */
+.government-component [style*="url(../assets/"]:not([style*="background-image"]) {
+  background-color: #f8f9fa !important;
+  border: 1px dashed #dee2e6 !important;
+}
+
+/* 누락된 백그라운드 이미지 대체 */
+.government-component .img-wrap:not([style*="background-image"]) {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.government-component .img-wrap:not([style*="background-image"])::before {
+  content: "🖼️";
+  font-size: 24px;
+  opacity: 0.5;
+}

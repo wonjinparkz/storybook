@@ -1,0 +1,125 @@
+/* Government Styles - Image Fallbacks for PNG files */
+
+/* 메인 비주얼 이미지 대체 */
+.main .visual-area .inner::before {
+  background: linear-gradient(135deg, #4a90e2, #246BEB) !important;
+  background-size: cover !important;
+}
+
+/* 가이드 이미지들 대체 - 그라데이션 배경 */
+.main .search-area .search-list .img-wrap[class*="guide_"]::before,
+.main .service-area .search-list .img-wrap[class*="main_"]::before {
+  content: "📖";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.main .search-area .search-list .img-wrap[class*="guide_"],
+.main .service-area .search-list .img-wrap[class*="main_"] {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
+  position: relative;
+}
+
+/* 가이드 이미지별 다른 색상 적용 */
+.main .search-area .search-list .img-wrap.guide_1,
+.main .service-area .search-list .img-wrap.main_1 {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb) !important;
+}
+
+.main .search-area .search-list .img-wrap.guide_2,
+.main .service-area .search-list .img-wrap.main_2 {
+  background: linear-gradient(135deg, #f3e5f5, #ce93d8) !important;
+}
+
+.main .search-area .search-list .img-wrap.guide_3,
+.main .service-area .search-list .img-wrap.main_3 {
+  background: linear-gradient(135deg, #e8f5e8, #a5d6a7) !important;
+}
+
+/* 추가 가이드 이미지들 - 번호별로 다른 색상 */
+.main .search-area .search-list .img-wrap[class*="guide_"]:nth-child(4n+1) {
+  background: linear-gradient(135deg, #fff3e0, #ffcc02) !important;
+}
+
+.main .search-area .search-list .img-wrap[class*="guide_"]:nth-child(4n+2) {
+  background: linear-gradient(135deg, #fce4ec, #f48fb1) !important;
+}
+
+.main .search-area .search-list .img-wrap[class*="guide_"]:nth-child(4n+3) {
+  background: linear-gradient(135deg, #e0f2f1, #4db6ac) !important;
+}
+
+.main .search-area .search-list .img-wrap[class*="guide_"]:nth-child(4n) {
+  background: linear-gradient(135deg, #e8eaf6, #7986cb) !important;
+}
+
+/* 메인 아이콘들 대체 */
+.main .service-area .search-list .img-wrap[class*="main_ico_"]::before {
+  content: "⚙️";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  z-index: 1;
+}
+
+/* 메인 메뉴 아이콘들 */
+[style*="main_menu_ico"]::before {
+  content: "📋";
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+/* 로그인 인증 아이콘들 */
+[style*="ico_login_certify"]::before {
+  content: "🔐";
+  display: inline-block;
+  font-size: 1.2rem;
+  margin-right: 0.3rem;
+}
+
+/* 뱃지 아이콘들 */
+[style*="ico_urgent_badge_danger"]::before {
+  content: "🔴";
+  display: inline-block;
+  font-size: 1rem;
+}
+
+[style*="ico_urgent_badge_ok"]::before {
+  content: "🟢";
+  display: inline-block;
+  font-size: 1rem;
+}
+
+[style*="ico_urgent_badge_info"]::before {
+  content: "🔵";
+  display: inline-block;
+  font-size: 1rem;
+}
+
+/* 페이지네이션 관련 */
+[style*="ico_page_"]::before {
+  content: "●";
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+/* PDF, Figma 아이콘 */
+[style*="ico_pdf"]::before {
+  content: "📄";
+  display: inline-block;
+  font-size: 1.5rem;
+}
+
+[style*="ico_figma"]::before {
+  content: "🎨";
+  display: inline-block;
+  font-size: 1.5rem;
+}

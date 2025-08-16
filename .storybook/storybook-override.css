@@ -1,0 +1,47 @@
+/* Storybook Override Styles for Government Components */
+
+/* Storybook iframe 및 캔버스 전체에 Pretendard GOV 폰트 적용 */
+html,
+body,
+body *,
+.sb-show-main,
+.sb-show-main *,
+.sb-main-padded,
+.sb-main-padded *,
+.docs-story,
+.docs-story *,
+#storybook-root,
+#storybook-root *,
+#storybook-preview-iframe,
+[data-is-storybook="true"],
+[data-is-storybook="true"] * {
+  font-family: 'Pretendard GOV', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif !important;
+}
+
+/* Storybook 기본 텍스트 색상 오버라이드 */
+body {
+  color: #333333 !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+
+/* Government 컴포넌트 특별 처리 */
+[class*="government"],
+[id*="header"],
+[id*="footer"],
+.head-logo,
+.foot-logo,
+.gnb,
+.foot-menu {
+  font-family: 'Pretendard GOV', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* Storybook UI 요소는 제외 */
+.sidebar-container,
+.sidebar-container *,
+.manager-main,
+.manager-main *,
+.sb-bar,
+.sb-bar * {
+  font-family: "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}

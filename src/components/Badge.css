@@ -1,0 +1,94 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+/* Sizes */
+.badge--small {
+  padding: 2px 6px;
+  font-size: 0.65rem;
+}
+
+.badge--medium {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+}
+
+.badge--large {
+  padding: 6px 12px;
+  font-size: 0.875rem;
+}
+
+/* Variants */
+.badge--primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.badge--secondary {
+  background-color: #64748b;
+  color: white;
+}
+
+.badge--success {
+  background-color: #16a34a;
+  color: white;
+}
+
+.badge--warning {
+  background-color: #d97706;
+  color: white;
+}
+
+.badge--error {
+  background-color: #dc2626;
+  color: white;
+}
+
+.badge--info {
+  background-color: #0891b2;
+  color: white;
+}
+
+/* Rounded */
+.badge--rounded {
+  border-radius: 50px;
+}
+
+/* Icon */
+.badge__icon {
+  display: flex;
+  align-items: center;
+  font-size: 0.875em;
+}
+
+/* Remove button */
+.badge__remove {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.2em;
+  line-height: 1;
+  padding: 0;
+  margin-left: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.badge__remove:hover {
+  opacity: 1;
+}
+
+.badge__remove:focus {
+  outline: none;
+  opacity: 1;
+}

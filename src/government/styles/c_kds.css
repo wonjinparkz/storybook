@@ -1,0 +1,1981 @@
+@charset "UTF-8";
+/* 공통 */
+/* 공통 */
+/* **** area mixin ****/
+/* **** text attr ****/
+/* **** scroll ****/
+/* **** form mixin ****/
+.text-white {
+  color: #fff;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.text-black {
+  color: #000;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.text-primary {
+  color: #246BEB;
+}
+
+.bg-primary {
+  background-color: #246BEB;
+}
+
+.text-secondary {
+  color: #003675;
+}
+
+.bg-secondary {
+  background-color: #003675;
+}
+
+.text-point {
+  color: #E71825;
+}
+
+.bg-point {
+  background-color: #E71825;
+}
+
+.text-danger {
+  color: #EB003B;
+}
+
+.bg-danger {
+  background-color: #EB003B;
+}
+
+.text-warning {
+  color: #FFB724;
+}
+
+.bg-warning {
+  background-color: #FFB724;
+}
+
+.text-success {
+  color: #008A1E;
+}
+
+.bg-success {
+  background-color: #008A1E;
+}
+
+.text-information {
+  color: #2768FF;
+}
+
+.bg-information {
+  background-color: #2768FF;
+}
+
+.text-primary-5 {
+  color: #EFF5FF;
+}
+
+.bg-primary-5 {
+  background-color: #EFF5FF;
+}
+
+.text-primary-10 {
+  color: #D3E1FB;
+}
+
+.bg-primary-10 {
+  background-color: #D3E1FB;
+}
+
+.text-primary-20 {
+  color: #A7C4F7;
+}
+
+.bg-primary-20 {
+  background-color: #A7C4F7;
+}
+
+.text-primary-30 {
+  color: #7CA6F3;
+}
+
+.bg-primary-30 {
+  background-color: #7CA6F3;
+}
+
+.text-primary-40 {
+  color: #5089EF;
+}
+
+.bg-primary-40 {
+  background-color: #5089EF;
+}
+
+.text-primary-60 {
+  color: #1D56BC;
+}
+
+.bg-primary-60 {
+  background-color: #1D56BC;
+}
+
+.text-primary-70 {
+  color: #16408D;
+}
+
+.bg-primary-70 {
+  background-color: #16408D;
+}
+
+.text-primary-80 {
+  color: #0E2B5E;
+}
+
+.bg-primary-80 {
+  background-color: #0E2B5E;
+}
+
+.text-primary-90 {
+  color: #07152F;
+}
+
+.bg-primary-90 {
+  background-color: #07152F;
+}
+
+.text-secondary-5 {
+  color: #EDF1F5;
+}
+
+.bg-secondary-5 {
+  background-color: #EDF1F5;
+}
+
+.text-secondary-10 {
+  color: #CDD7E4;
+}
+
+.bg-secondary-10 {
+  background-color: #CDD7E4;
+}
+
+.text-secondary-20 {
+  color: #B4C4D6;
+}
+
+.bg-secondary-20 {
+  background-color: #B4C4D6;
+}
+
+.text-secondary-30 {
+  color: #99B0CB;
+}
+
+.bg-secondary-30 {
+  background-color: #99B0CB;
+}
+
+.text-secondary-40 {
+  color: #2A5C96;
+}
+
+.bg-secondary-40 {
+  background-color: #2A5C96;
+}
+
+.text-secondary-60 {
+  color: #002B5E;
+}
+
+.bg-secondary-60 {
+  background-color: #002B5E;
+}
+
+.text-secondary-70 {
+  color: #002046;
+}
+
+.bg-secondary-70 {
+  background-color: #002046;
+}
+
+.text-secondary-80 {
+  color: #00162F;
+}
+
+.bg-secondary-80 {
+  background-color: #00162F;
+}
+
+.text-secondary-90 {
+  color: #000B17;
+}
+
+.bg-secondary-90 {
+  background-color: #000B17;
+}
+
+.text-point-5 {
+  color: #FDF2F3;
+}
+
+.bg-point-5 {
+  background-color: #FDF2F3;
+}
+
+.text-point-10 {
+  color: #FAD1D3;
+}
+
+.bg-point-10 {
+  background-color: #FAD1D3;
+}
+
+.text-point-20 {
+  color: #F5A3A8;
+}
+
+.bg-point-20 {
+  background-color: #F5A3A8;
+}
+
+.text-point-30 {
+  color: #F1747C;
+}
+
+.bg-point-30 {
+  background-color: #F1747C;
+}
+
+.text-point-40 {
+  color: #EC4651;
+}
+
+.bg-point-40 {
+  background-color: #EC4651;
+}
+
+.text-point-60 {
+  color: #B9131E;
+}
+
+.bg-point-60 {
+  background-color: #B9131E;
+}
+
+.text-point-70 {
+  color: #8B0E16;
+}
+
+.bg-point-70 {
+  background-color: #8B0E16;
+}
+
+.text-point-80 {
+  color: #5C0A0F;
+}
+
+.bg-point-80 {
+  background-color: #5C0A0F;
+}
+
+.text-point-90 {
+  color: #2E0507;
+}
+
+.bg-point-90 {
+  background-color: #2E0507;
+}
+
+.text-gray-5 {
+  color: #F8F8F8;
+}
+
+.bg-gray-5 {
+  background-color: #F8F8F8;
+}
+
+.text-gray-10 {
+  color: #F0F0F0;
+}
+
+.bg-gray-10 {
+  background-color: #F0F0F0;
+}
+
+.text-gray-20 {
+  color: #E4E4E4;
+}
+
+.bg-gray-20 {
+  background-color: #E4E4E4;
+}
+
+.text-gray-30 {
+  color: #D8D8D8;
+}
+
+.bg-gray-30 {
+  background-color: #D8D8D8;
+}
+
+.text-gray-40 {
+  color: #C6C6C6;
+}
+
+.bg-gray-40 {
+  background-color: #C6C6C6;
+}
+
+.text-gray-50 {
+  color: #8E8E8E;
+}
+
+.bg-gray-50 {
+  background-color: #8E8E8E;
+}
+
+.text-gray-60 {
+  color: #717171;
+}
+
+.bg-gray-60 {
+  background-color: #717171;
+}
+
+.text-gray-70 {
+  color: #555555;
+}
+
+.bg-gray-70 {
+  background-color: #555555;
+}
+
+.text-gray-80 {
+  color: #2D2D2D;
+}
+
+.bg-gray-80 {
+  background-color: #2D2D2D;
+}
+
+.text-gray-90 {
+  color: #1D1D1D;
+}
+
+.bg-gray-90 {
+  background-color: #1D1D1D;
+}
+
+/** fonts setting **/
+/* Variable font for all weights */
+@font-face {
+  font-family: "Pretendard GOV";
+  font-weight: 100 900;
+  font-style: normal;
+  src: url("../fonts/woff2/PretendardGOVVariable.woff2") format("woff2-variations");
+}
+:root {
+  --white: #fff;
+  --black: #000;
+  --primary: #246BEB;
+  --secondary: #003675;
+  --point: #E71825;
+  --danger: #EB003B;
+  --warning: #FFB724;
+  --success: #008A1E;
+  --information: #2768FF;
+  --primary-5: #EFF5FF;
+  --primary-10: #D3E1FB;
+  --primary-20: #A7C4F7;
+  --primary-30: #7CA6F3;
+  --primary-40: #5089EF;
+  --primary-60: #1D56BC;
+  --primary-70: #16408D;
+  --primary-80: #0E2B5E;
+  --primary-90: #07152F;
+  --secondary-5: #EDF1F5;
+  --secondary-10: #CDD7E4;
+  --secondary-20: #B4C4D6;
+  --secondary-30: #99B0CB;
+  --secondary-40: #2A5C96;
+  --secondary-60: #002B5E;
+  --secondary-70: #002046;
+  --secondary-80: #00162F;
+  --secondary-90: #000B17;
+  --point-5: #FDF2F3;
+  --point-10: #FAD1D3;
+  --point-20: #F5A3A8;
+  --point-30: #F1747C;
+  --point-40: #EC4651;
+  --point-60: #B9131E;
+  --point-70: #8B0E16;
+  --point-80: #5C0A0F;
+  --point-90: #2E0507;
+  --gray-5: #F8F8F8;
+  --gray-10: #F0F0F0;
+  --gray-20: #E4E4E4;
+  --gray-30: #D8D8D8;
+  --gray-40: #C6C6C6;
+  --gray-50: #8E8E8E;
+  --gray-60: #717171;
+  --gray-70: #555555;
+  --gray-80: #2D2D2D;
+  --gray-90: #1D1D1D;
+  --fz-display-sm: 4rem;
+  --fz-display-md: 5rem;
+  --fz-display-lg: 6.6rem;
+  --fz-heading-sm: 3.2rem;
+  --fz-heading-md: 4rem;
+  --fz-heading-lg: 5rem;
+  --fz-title-xsm: 1.5rem;
+  --fz-title-sm: 1.7rem;
+  --fz-title-md: 1.9rem;
+  --fz-title-lg: 2.1rem;
+  --fz-title-xlg: 2.5rem;
+  --fz-title-xxlg: 3.2rem;
+  --fz-body-sm: 1.5rem;
+  --fz-body-md: 1.7rem;
+  --fz-body-lg: 1.9rem;
+  --fz-link-sm: 1.5rem;
+  --fz-link-md: 1.7rem;
+  --fz-link-lg: 1.9rem;
+  --fz-detail-sm: 1.3rem;
+  --fz-detail-md: 1.5rem;
+  --fz-detail-lg: 1.7rem;
+  --fz-label-xsm: 1.3rem;
+  --fz-label-sm: 1.5rem;
+  --fz-label-md: 1.7rem;
+  --fz-label-lg: 1.9rem;
+  --rd-1: .1rem;
+  --rd-2: .2rem;
+  --rd-4: .4rem;
+  --rd-6: .6rem;
+  --rd-8: .8rem;
+  --rd-10: 1rem;
+  --rd-12: 1.2rem;
+  --rd-full: 100%;
+  --btn-h-xsm: 3.2rem;
+  --btn-h-sm: 4rem;
+  --btn-h-md: 4.8rem;
+  --btn-h-lg: 5.6rem;
+  --btn-h-xlg: 6.4rem;
+  --btn-px-xsm: 1rem;
+  --btn-px-sm: 1.2rem;
+  --btn-px-md: 1.6rem;
+  --btn-px-lg: 2rem;
+  --btn-px-xlg: 2.4rem;
+  --btn-rd-xsm: .6rem;
+  --btn-rd-sm: .6rem;
+  --btn-rd-md: .8rem;
+  --btn-rd-lg: .8rem;
+  --btn-rd-xlg: .8rem;
+  --btn-fz-xsm: 1.5rem;
+  --btn-fz-sm: 1.7rem;
+  --btn-fz-md: 1.7rem;
+  --btn-fz-lg: 1.9rem;
+  --btn-fz-xlg: 1.9rem;
+  --btnChipFill-h-md: 3.2rem;
+  --btnChipFill-h-lg: 3.6rem;
+  --btnChipFill-pd-md: 0rem 1.2rem;
+  --btnChipFill-pd-lg: 0rem 1.2rem;
+  --btnChipFill-rd-md: .6rem;
+  --btnChipFill-rd-lg: .6rem;
+  --btnChipFill-fz-md: 1.5rem;
+  --btnChipFill-fz-lg: 1.7rem;
+  --btnChipOutline-h-md: 3.2rem;
+  --btnChipOutline-h-lg: 3.6rem;
+  --btnChipOutline-pd-md: 0rem 1.2rem;
+  --btnChipOutline-pd-lg: 0rem 1.2rem;
+  --btnChipOutline-rd-md: 10rem;
+  --btnChipOutline-rd-lg: 10rem;
+  --btnChipOutline-fz-md: 1.5rem;
+  --btnChipOutline-fz-lg: 1.7rem;
+  --btnChipOutline-gap-md: .2rem;
+  --btnChipOutline-gap-lg: .2rem;
+  --btnChipOutline-size-md: 1.2rem;
+  --btnChipOutline-size-lg: 1.6rem;
+  --input-h-sm: 4rem;
+  --input-h-md: 4.8rem;
+  --input-h-lg: 5.6rem;
+  --input-h-xlg: 8rem;
+  --input-px-sm: 1.6rem;
+  --input-px-md: 1.6rem;
+  --input-px-lg: 1.6rem;
+  --input-px-xlg: 2.4rem;
+  --input-rd-sm: .6rem;
+  --input-rd-md: .8rem;
+  --input-rd-lg: .8rem;
+  --input-rd-xlg: 1.2rem;
+  --input-fz-sm: 1.5rem;
+  --input-fz-md: 1.7rem;
+  --input-fz-lg: 1.9rem;
+  --input-fz-xlg: 2.5rem;
+  --rdo-size-sm: 1.6rem;
+  --rdo-size-md: 2rem;
+  --rdo-size-lg: 2.4rem;
+  --rdo-chk-sm: .8rem;
+  --rdo-chk-md: 1rem;
+  --rdo-chk-lg: 1.4rem;
+  --rdo-pos-sm: .2rem;
+  --rdo-pos-md: .5rem;
+  --rdo-pos-lg: 1rem;
+  --rdo-fz-sm: 1.5rem;
+  --rdo-fz-md: 1.7rem;
+  --rdo-fz-lg: 1.9rem;
+  --chk-size-sm: 1.6rem;
+  --chk-size-md: 2rem;
+  --chk-size-lg: 2.4rem;
+  --chk-primary-chk-sm: 1.2rem;
+  --chk-primary-chk-md: 1.6rem;
+  --chk-primary-chk-lg: 2rem;
+  --chk-secondary-chk-md: 2rem;
+  --chk-pos-md: .5rem;
+  --chk-fz-sm: 1.5rem;
+  --chk-fz-md: 1.7rem;
+  --chk-fz-lg: 1.9rem;
+  --select-h-sm: 4rem;
+  --select-h-md: 4.8rem;
+  --select-h-lg: 5.6rem;
+  --select-pd-sm: 0 5.2rem 0 1.6rem;
+  --select-pd-md: 0 5.2rem 0 1.6rem;
+  --select-pd-lg: 0 5.2rem 0 1.6rem;
+  --select-rd-sm: .6rem;
+  --select-rd-md: .8rem;
+  --select-rd-lg: .8rem;
+  --select-fz-sm: 1.5rem;
+  --select-fz-md: 1.7rem;
+  --select-fz-lg: 1.9rem;
+  --select-rn-sm: 1.6rem;
+  --select-rn-md: 1.6rem;
+  --select-rn-lg: 1.6rem;
+  --select-bgs-sm: 2rem;
+  --select-bgs-md: 2rem;
+  --select-bgs-lg: 2.4rem;
+  --switch-h-md: 2rem;
+  --switch-h-lg: 2.4rem;
+  --switch-w-md: 3.2rem;
+  --switch-w-lg: 4rem;
+  --switch-b-md: 1.6rem;
+  --switch-b-lg: 2rem;
+  --switch-br-md: 0.2rem;
+  --switch-br-lg: 0.2rem;
+  --switch-pd-md: 0.8rem;
+  --switch-pd-lg: 0.8rem;
+  --switch-rd-md: 4rem;
+  --switch-rd-lg: 4rem;
+  --switch-fz-md: 1.7rem;
+  --switch-fz-lg: 1.9rem;
+  --rdoChipOutline-h-sm: 3.2rem;
+  --rdoChipOutline-h-md: 4rem;
+  --rdoChipOutline-h-lg: 4.8rem;
+  --rdoChipOutline-pd-sm: 0 1rem;
+  --rdoChipOutline-pd-md: 0 1.2rem;
+  --rdoChipOutline-pd-lg: 0 1.6rem;
+  --rdoChipOutline-rd-sm: .6rem;
+  --rdoChipOutline-rd-md: .6rem;
+  --rdoChipOutline-rd-lg: .8rem;
+  --rdoChipOutline-fz-sm: 1.5rem;
+  --rdoChipOutline-fz-md: 1.7rem;
+  --rdoChipOutline-fz-lg: 1.7rem;
+  --chkChipOutline-h-sm: 3.2rem;
+  --chkChipOutline-h-md: 4rem;
+  --chkChipOutline-h-lg: 4.8rem;
+  --chkChipOutline-pd-sm: 0 1rem 0 .8rem;
+  --chkChipOutline-pd-md: 0 1.2rem 0 1rem;
+  --chkChipOutline-pd-lg: 0 1.6rem 0 1.2rem;
+  --chkChipOutline-rd-sm: .6rem;
+  --chkChipOutline-rd-md: .6rem;
+  --chkChipOutline-rd-lg: .8rem;
+  --chkChipOutline-fz-sm: 1.5rem;
+  --chkChipOutline-fz-md: 1.7rem;
+  --chkChipOutline-fz-lg: 1.7rem;
+  --chkChipOutline-gap-sm: .4rem;
+  --chkChipOutline-gap-md: .4rem;
+  --chkChipOutline-gap-lg: .4rem;
+  --chkChipOutline-ico-sm: 1.6rem;
+  --chkChipOutline-ico-md: 2rem;
+  --chkChipOutline-ico-lg: 2rem;
+  --tab-h-full: 5.6rem;
+  --tab-h-fill: 4.8rem;
+  --tab-h-line: 4.8rem;
+  --tab-fz-full: 1.9rem;
+  --tab-fz-fill: 1.9rem;
+  --tab-fz-ilne: 1.9rem;
+  --tab-px-full: 0;
+  --tab-px-fill: 1.6rem;
+  --tab-px-line: .2rem;
+  --tab-ml-full: 0;
+  --tab-ml-fill: .8rem;
+  --tab-ml-line: 1.6rem;
+  --tab-rd-full: .8rem;
+  --tab-rd-fill: .8rem;
+  --tab-rd-line: 0;
+  --spacer-50: 20rem;
+  --spacer-49: 19.6rem;
+  --spacer-48: 19.2rem;
+  --spacer-47: 18.8rem;
+  --spacer-46: 18.4rem;
+  --spacer-45: 18rem;
+  --spacer-44: 17.6rem;
+  --spacer-43: 17.2rem;
+  --spacer-42: 16.8rem;
+  --spacer-41: 16.4rem;
+  --spacer-40: 16rem;
+  --spacer-39: 15.6rem;
+  --spacer-38: 15.2rem;
+  --spacer-37: 14.8rem;
+  --spacer-36: 14.4rem;
+  --spacer-35: 14rem;
+  --spacer-34: 13.6rem;
+  --spacer-33: 13.2rem;
+  --spacer-32: 12.8rem;
+  --spacer-31: 12.4rem;
+  --spacer-30: 12rem;
+  --spacer-29: 11.6rem;
+  --spacer-28: 11.2rem;
+  --spacer-27: 10.8rem;
+  --spacer-26: 10.4rem;
+  --spacer-25: 10rem;
+  --spacer-24: 9.6rem;
+  --spacer-23: 9.2rem;
+  --spacer-22: 8.8rem;
+  --spacer-21: 8.4rem;
+  --spacer-20: 8rem;
+  --spacer-19: 7.6rem;
+  --spacer-18: 7.2rem;
+  --spacer-17: 6.8rem;
+  --spacer-16: 6.4rem;
+  --spacer-15: 6rem;
+  --spacer-14: 5.6rem;
+  --spacer-13: 5.2rem;
+  --spacer-12: 4.8rem;
+  --spacer-11: 4.4rem;
+  --spacer-10: 4rem;
+  --spacer-9: 3.6rem;
+  --spacer-8: 3.2rem;
+  --spacer-7: 2.8rem;
+  --spacer-6: 2.4rem;
+  --spacer-5: 2rem;
+  --spacer-4: 1.6rem;
+  --spacer-3: 1.2rem;
+  --spacer-2: 0.8rem;
+  --spacer-1: 0.4rem;
+  --spacer-0: 0;
+  --spacer-default: .1rem;
+  --spacer-default2: .2rem;
+  --spacer-full: 100%;
+}
+.btn.xsm {
+  height: 3.2rem;
+  padding: 0 var(--btn-px-xsm);
+  border-radius: var(--btn-rd-xsm);
+  font-size: var(--btn-fz-xsm);
+}
+
+.btn.sm {
+  height: 4rem;
+  padding: 0 var(--btn-px-sm);
+  border-radius: var(--btn-rd-sm);
+  font-size: var(--btn-fz-sm);
+}
+
+.btn.md {
+  height: 4.8rem;
+  padding: 0 var(--btn-px-md);
+  border-radius: var(--btn-rd-md);
+  font-size: var(--btn-fz-md);
+}
+
+.btn.lg {
+  height: 5.6rem;
+  padding: 0 var(--btn-px-lg);
+  border-radius: var(--btn-rd-lg);
+  font-size: var(--btn-fz-lg);
+}
+
+.btn.xlg {
+  height: 6.4rem;
+  padding: 0 var(--btn-px-xlg);
+  border-radius: var(--btn-rd-xlg);
+  font-size: var(--btn-fz-xlg);
+}
+
+.btn-chip-fill.md {
+  height: var(--btnChipFill-h-md);
+  padding: var(--btnChipFill-pd-md);
+  border-radius: var(--btnChipFill-rd-md);
+  font-size: var(--btnChipFill-fz-md);
+}
+
+.btn-chip-fill {
+  height: var(--btnChipFill-h-lg);
+  padding: var(--btnChipFill-pd-lg);
+  border-radius: var(--btnChipFill-rd-lg);
+  font-size: var(--btnChipFill-fz-lg);
+}
+.btn-chip-fill:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-fill.lg {
+  height: var(--btnChipFill-h-lg);
+  padding: var(--btnChipFill-pd-lg);
+  border-radius: var(--btnChipFill-rd-lg);
+  font-size: var(--btnChipFill-fz-lg);
+}
+
+.btn-chip-fill {
+  height: var(--btnChipFill-h-lg);
+  padding: var(--btnChipFill-pd-lg);
+  border-radius: var(--btnChipFill-rd-lg);
+  font-size: var(--btnChipFill-fz-lg);
+}
+.btn-chip-fill:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-fill {
+  height: var(--btnChipFill-h-lg);
+  padding: var(--btnChipFill-pd-lg);
+  border-radius: var(--btnChipFill-rd-lg);
+  font-size: var(--btnChipFill-fz-lg);
+}
+.btn-chip-fill:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-fill {
+  height: var(--btnChipFill-h-lg);
+  padding: var(--btnChipFill-pd-lg);
+  border-radius: var(--btnChipFill-rd-lg);
+  font-size: var(--btnChipFill-fz-lg);
+}
+.btn-chip-fill:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-fill {
+  height: var(--btnChipFill-h-lg);
+  padding: var(--btnChipFill-pd-lg);
+  border-radius: var(--btnChipFill-rd-lg);
+  font-size: var(--btnChipFill-fz-lg);
+}
+.btn-chip-fill:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-fill {
+  height: var(--btnChipFill-h-lg);
+  padding: var(--btnChipFill-pd-lg);
+  border-radius: var(--btnChipFill-rd-lg);
+  font-size: var(--btnChipFill-fz-lg);
+}
+.btn-chip-fill:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-fill {
+  height: var(--btnChipFill-h-lg);
+  padding: var(--btnChipFill-pd-lg);
+  border-radius: var(--btnChipFill-rd-lg);
+  font-size: var(--btnChipFill-fz-lg);
+}
+.btn-chip-fill:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-fill {
+  height: var(--btnChipFill-h-lg);
+  padding: var(--btnChipFill-pd-lg);
+  border-radius: var(--btnChipFill-rd-lg);
+  font-size: var(--btnChipFill-fz-lg);
+}
+.btn-chip-fill:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline.md {
+  height: var(--btnChipOutline-h-md);
+  padding: var(--btnChipOutline-pd-md);
+  border-radius: var(--btnChipOutline-rd-md);
+  font-size: var(--btnChipOutline-fz-md);
+}
+.btn-chip-outline.md .btn-del {
+  width: var(--btnChipOutline-size-md);
+  height: var(--btnChipOutline-size-md);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline.lg {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline.lg .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.btn-chip-outline {
+  height: var(--btnChipOutline-h-lg);
+  padding: var(--btnChipOutline-pd-lg);
+  border-radius: var(--btnChipOutline-rd-lg);
+  font-size: var(--btnChipOutline-fz-lg);
+}
+.btn-chip-outline .btn-del {
+  width: var(--btnChipOutline-size-lg);
+  height: var(--btnChipOutline-size-lg);
+  background: url(../assets/ico_chip_del.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.btn-chip-outline .btn-del:focus {
+  outline-offset: 0.4rem;
+  outline: 2px solid rgba(36, 107, 235, 0.8);
+}
+
+.form-control.sm {
+  height: 4rem;
+  padding: 0 var(--input-px-sm);
+  border-radius: var(--input-rd-sm);
+  font-size: var(--input-fz-sm);
+}
+
+.form-control.md {
+  height: 4.8rem;
+  padding: 0 var(--input-px-md);
+  border-radius: var(--input-rd-md);
+  font-size: var(--input-fz-md);
+}
+
+.form-control.lg {
+  height: 5.6rem;
+  padding: 0 var(--input-px-lg);
+  border-radius: var(--input-rd-lg);
+  font-size: var(--input-fz-lg);
+}
+
+.form-control.xlg {
+  height: 8rem;
+  padding: 0 var(--input-px-xlg);
+  border-radius: var(--input-rd-xlg);
+  font-size: var(--input-fz-xlg);
+}
+
+.form-check.sm > [type=radio] ~ label {
+  font-size: var(--rdo-fz-sm);
+  line-height: var(--rdo-size-sm);
+  min-height: var(--rdo-size-sm);
+  padding-left: calc(var(--rdo-size-sm) + var(--spacer-2));
+}
+.form-check.sm > [type=radio] ~ label::before {
+  width: var(--rdo-size-sm);
+  height: var(--rdo-size-sm);
+}
+.form-check.sm > [type=radio] ~ label::after {
+  top: calc((var(--rdo-size-sm) - var(--rdo-chk-sm)) / 2);
+  left: calc((var(--rdo-size-sm) - var(--rdo-chk-sm)) / 2);
+  width: var(--rdo-chk-sm);
+  height: var(--rdo-chk-sm);
+}
+
+.form-check.md > [type=radio] ~ label {
+  font-size: var(--rdo-fz-md);
+  line-height: var(--rdo-size-md);
+  min-height: var(--rdo-size-md);
+  padding-left: calc(var(--rdo-size-md) + var(--spacer-2));
+}
+.form-check.md > [type=radio] ~ label::before {
+  width: var(--rdo-size-md);
+  height: var(--rdo-size-md);
+}
+.form-check.md > [type=radio] ~ label::after {
+  top: calc((var(--rdo-size-md) - var(--rdo-chk-md)) / 2);
+  left: calc((var(--rdo-size-md) - var(--rdo-chk-md)) / 2);
+  width: var(--rdo-chk-md);
+  height: var(--rdo-chk-md);
+}
+
+.form-check.lg > [type=radio] ~ label {
+  font-size: var(--rdo-fz-lg);
+  line-height: var(--rdo-size-lg);
+  min-height: var(--rdo-size-lg);
+  padding-left: calc(var(--rdo-size-lg) + var(--spacer-2));
+}
+.form-check.lg > [type=radio] ~ label::before {
+  width: var(--rdo-size-lg);
+  height: var(--rdo-size-lg);
+}
+.form-check.lg > [type=radio] ~ label::after {
+  top: calc((var(--rdo-size-lg) - var(--rdo-chk-lg)) / 2);
+  left: calc((var(--rdo-size-lg) - var(--rdo-chk-lg)) / 2);
+  width: var(--rdo-chk-lg);
+  height: var(--rdo-chk-lg);
+}
+
+.form-check.sm > [type=checkbox] ~ label {
+  font-size: var(--chk-fz-sm);
+  line-height: var(--chk-size-sm);
+  min-height: var(--chk-size-sm);
+  padding-left: calc(var(--chk-size-sm) + var(--spacer-2));
+}
+.form-check.sm > [type=checkbox] ~ label::before {
+  width: var(--chk-size-sm);
+  height: var(--chk-size-sm);
+}
+.form-check.sm > [type=checkbox] ~ label::after {
+  width: var(--chk-primary-chk-sm);
+  height: var(--chk-primary-chk-sm);
+}
+.form-check.sm.ico-only > [type=checkbox] ~ label {
+  padding-left: var(--chk-size-sm);
+}
+
+.form-check.md > [type=checkbox] ~ label {
+  font-size: var(--chk-fz-md);
+  line-height: var(--chk-size-md);
+  min-height: var(--chk-size-md);
+  padding-left: calc(var(--chk-size-md) + var(--spacer-2));
+}
+.form-check.md > [type=checkbox] ~ label::before {
+  width: var(--chk-size-md);
+  height: var(--chk-size-md);
+}
+.form-check.md > [type=checkbox] ~ label::after {
+  width: var(--chk-primary-chk-md);
+  height: var(--chk-primary-chk-md);
+}
+.form-check.md.ico-only > [type=checkbox] ~ label {
+  padding-left: var(--chk-size-md);
+}
+
+.form-check.lg > [type=checkbox] ~ label {
+  font-size: var(--chk-fz-lg);
+  line-height: var(--chk-size-lg);
+  min-height: var(--chk-size-lg);
+  padding-left: calc(var(--chk-size-lg) + var(--spacer-2));
+}
+.form-check.lg > [type=checkbox] ~ label::before {
+  width: var(--chk-size-lg);
+  height: var(--chk-size-lg);
+}
+.form-check.lg > [type=checkbox] ~ label::after {
+  width: var(--chk-primary-chk-lg);
+  height: var(--chk-primary-chk-lg);
+}
+.form-check.lg.ico-only > [type=checkbox] ~ label {
+  padding-left: var(--chk-size-lg);
+}
+
+.form-select.sm {
+  height: 4rem;
+  padding: var(--select-pd-sm);
+  border-radius: var(--select-rd-sm);
+  font-size: var(--select-fz-sm);
+  background-size: var(--select-bgs-sm);
+}
+
+.form-select.md {
+  height: 4.8rem;
+  padding: var(--select-pd-md);
+  border-radius: var(--select-rd-md);
+  font-size: var(--select-fz-md);
+  background-size: var(--select-bgs-md);
+}
+
+.form-select.lg {
+  height: 5.6rem;
+  padding: var(--select-pd-lg);
+  border-radius: var(--select-rd-lg);
+  font-size: var(--select-fz-lg);
+  background-size: var(--select-bgs-lg);
+}
+
+.form-switch.md [type=checkbox] ~ i::before {
+  width: var(--switch-b-md);
+  height: var(--switch-b-md);
+  border-radius: var(--switch-rd-md);
+}
+.form-switch.md [type=checkbox] ~ i::after {
+  width: var(--switch-w-md);
+  height: var(--switch-h-md);
+}
+.form-switch.md [type=checkbox] ~ label {
+  padding-left: calc(var(--switch-w-md) + var(--switch-pd-md));
+  margin-left: calc(var(--switch-w-md) * -1);
+  font-size: var(--switch-fz-md);
+}
+.form-switch.md [type=checkbox]:checked ~ i::before {
+  position: absolute;
+  left: calc(var(--switch-w-md) - var(--switch-b-md) - var(--switch-br-md));
+}
+
+.form-switch.lg [type=checkbox] ~ i::before {
+  width: var(--switch-b-lg);
+  height: var(--switch-b-lg);
+  border-radius: var(--switch-rd-lg);
+}
+.form-switch.lg [type=checkbox] ~ i::after {
+  width: var(--switch-w-lg);
+  height: var(--switch-h-lg);
+}
+.form-switch.lg [type=checkbox] ~ label {
+  padding-left: calc(var(--switch-w-lg) + var(--switch-pd-lg));
+  margin-left: calc(var(--switch-w-lg) * -1);
+  font-size: var(--switch-fz-lg);
+}
+.form-switch.lg [type=checkbox]:checked ~ i::before {
+  position: absolute;
+  left: calc(var(--switch-w-lg) - var(--switch-b-lg) - var(--switch-br-lg));
+}
+
+.form-chip.sm .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--rdoChipOutline-h-sm);
+  padding: var(--rdoChipOutline-pd-sm);
+  border-radius: var(--rdoChipOutline-rd-sm);
+  font-size: var(--rdoChipOutline-fz-sm);
+}
+.form-chip.sm .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip.sm .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip.sm .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--rdoChipOutline-h-sm);
+  padding: var(--rdoChipOutline-pd-sm);
+  border-radius: var(--rdoChipOutline-rd-sm);
+  font-size: var(--rdoChipOutline-fz-sm);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip.md .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--rdoChipOutline-h-md);
+  padding: var(--rdoChipOutline-pd-md);
+  border-radius: var(--rdoChipOutline-rd-md);
+  font-size: var(--rdoChipOutline-fz-md);
+}
+.form-chip.md .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip.md .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip.md .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--rdoChipOutline-h-md);
+  padding: var(--rdoChipOutline-pd-md);
+  border-radius: var(--rdoChipOutline-rd-md);
+  font-size: var(--rdoChipOutline-fz-md);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip.lg .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--rdoChipOutline-h-lg);
+  padding: var(--rdoChipOutline-pd-lg);
+  border-radius: var(--rdoChipOutline-rd-lg);
+  font-size: var(--rdoChipOutline-fz-lg);
+}
+.form-chip.lg .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip.lg .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip.lg .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--rdoChipOutline-h-lg);
+  padding: var(--rdoChipOutline-pd-lg);
+  border-radius: var(--rdoChipOutline-rd-lg);
+  font-size: var(--rdoChipOutline-fz-lg);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--rdoChipOutline-h-sm);
+  padding: var(--rdoChipOutline-pd-sm);
+  border-radius: var(--rdoChipOutline-rd-sm);
+  font-size: var(--rdoChipOutline-fz-sm);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--rdoChipOutline-h-md);
+  padding: var(--rdoChipOutline-pd-md);
+  border-radius: var(--rdoChipOutline-rd-md);
+  font-size: var(--rdoChipOutline-fz-md);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--rdoChipOutline-h-lg);
+  padding: var(--rdoChipOutline-pd-lg);
+  border-radius: var(--rdoChipOutline-rd-lg);
+  font-size: var(--rdoChipOutline-fz-lg);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--rdoChipOutline-h-sm);
+  padding: var(--rdoChipOutline-pd-sm);
+  border-radius: var(--rdoChipOutline-rd-sm);
+  font-size: var(--rdoChipOutline-fz-sm);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--rdoChipOutline-h-md);
+  padding: var(--rdoChipOutline-pd-md);
+  border-radius: var(--rdoChipOutline-rd-md);
+  font-size: var(--rdoChipOutline-fz-md);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--rdoChipOutline-h-lg);
+  padding: var(--rdoChipOutline-pd-lg);
+  border-radius: var(--rdoChipOutline-rd-lg);
+  font-size: var(--rdoChipOutline-fz-lg);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--rdoChipOutline-h-sm);
+  padding: var(--rdoChipOutline-pd-sm);
+  border-radius: var(--rdoChipOutline-rd-sm);
+  font-size: var(--rdoChipOutline-fz-sm);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--rdoChipOutline-h-md);
+  padding: var(--rdoChipOutline-pd-md);
+  border-radius: var(--rdoChipOutline-rd-md);
+  font-size: var(--rdoChipOutline-fz-md);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .radio ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--rdoChipOutline-h-lg);
+  padding: var(--rdoChipOutline-pd-lg);
+  border-radius: var(--rdoChipOutline-rd-lg);
+  font-size: var(--rdoChipOutline-fz-lg);
+}
+.form-chip .radio ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .radio:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .radio:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip.sm .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--chkChipOutline-h-sm);
+  padding: var(--chkChipOutline-pd-sm);
+  border-radius: var(--chkChipOutline-rd-sm);
+  font-size: var(--chkChipOutline-fz-sm);
+}
+.form-chip.sm .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip.sm .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip.sm .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--chkChipOutline-h-sm);
+  padding: var(--chkChipOutline-pd-sm);
+  border-radius: var(--chkChipOutline-rd-sm);
+  font-size: var(--chkChipOutline-fz-sm);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip.md .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--chkChipOutline-h-md);
+  padding: var(--chkChipOutline-pd-md);
+  border-radius: var(--chkChipOutline-rd-md);
+  font-size: var(--chkChipOutline-fz-md);
+}
+.form-chip.md .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip.md .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip.md .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--chkChipOutline-h-md);
+  padding: var(--chkChipOutline-pd-md);
+  border-radius: var(--chkChipOutline-rd-md);
+  font-size: var(--chkChipOutline-fz-md);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip.lg .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--chkChipOutline-h-lg);
+  padding: var(--chkChipOutline-pd-lg);
+  border-radius: var(--chkChipOutline-rd-lg);
+  font-size: var(--chkChipOutline-fz-lg);
+}
+.form-chip.lg .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip.lg .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip.lg .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--chkChipOutline-h-lg);
+  padding: var(--chkChipOutline-pd-lg);
+  border-radius: var(--chkChipOutline-rd-lg);
+  font-size: var(--chkChipOutline-fz-lg);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--chkChipOutline-h-sm);
+  padding: var(--chkChipOutline-pd-sm);
+  border-radius: var(--chkChipOutline-rd-sm);
+  font-size: var(--chkChipOutline-fz-sm);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--chkChipOutline-h-md);
+  padding: var(--chkChipOutline-pd-md);
+  border-radius: var(--chkChipOutline-rd-md);
+  font-size: var(--chkChipOutline-fz-md);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--chkChipOutline-h-lg);
+  padding: var(--chkChipOutline-pd-lg);
+  border-radius: var(--chkChipOutline-rd-lg);
+  font-size: var(--chkChipOutline-fz-lg);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--chkChipOutline-h-sm);
+  padding: var(--chkChipOutline-pd-sm);
+  border-radius: var(--chkChipOutline-rd-sm);
+  font-size: var(--chkChipOutline-fz-sm);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--chkChipOutline-h-md);
+  padding: var(--chkChipOutline-pd-md);
+  border-radius: var(--chkChipOutline-rd-md);
+  font-size: var(--chkChipOutline-fz-md);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--chkChipOutline-h-lg);
+  padding: var(--chkChipOutline-pd-lg);
+  border-radius: var(--chkChipOutline-rd-lg);
+  font-size: var(--chkChipOutline-fz-lg);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--chkChipOutline-h-sm);
+  padding: var(--chkChipOutline-pd-sm);
+  border-radius: var(--chkChipOutline-rd-sm);
+  font-size: var(--chkChipOutline-fz-sm);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--chkChipOutline-h-md);
+  padding: var(--chkChipOutline-pd-md);
+  border-radius: var(--chkChipOutline-rd-md);
+  font-size: var(--chkChipOutline-fz-md);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--chkChipOutline-h-lg);
+  padding: var(--chkChipOutline-pd-lg);
+  border-radius: var(--chkChipOutline-rd-lg);
+  font-size: var(--chkChipOutline-fz-lg);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--chkChipOutline-h-sm);
+  padding: var(--chkChipOutline-pd-sm);
+  border-radius: var(--chkChipOutline-rd-sm);
+  font-size: var(--chkChipOutline-fz-sm);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--chkChipOutline-h-md);
+  padding: var(--chkChipOutline-pd-md);
+  border-radius: var(--chkChipOutline-rd-md);
+  font-size: var(--chkChipOutline-fz-md);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--chkChipOutline-h-lg);
+  padding: var(--chkChipOutline-pd-lg);
+  border-radius: var(--chkChipOutline-rd-lg);
+  font-size: var(--chkChipOutline-fz-lg);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-sm);
+  height: var(--chkChipOutline-h-sm);
+  padding: var(--chkChipOutline-pd-sm);
+  border-radius: var(--chkChipOutline-rd-sm);
+  font-size: var(--chkChipOutline-fz-sm);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-sm);
+  height: var(--chkChipOutline-ico-sm);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-md);
+  height: var(--chkChipOutline-h-md);
+  padding: var(--chkChipOutline-pd-md);
+  border-radius: var(--chkChipOutline-rd-md);
+  font-size: var(--chkChipOutline-fz-md);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-md);
+  height: var(--chkChipOutline-ico-md);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+.form-chip .checkbox ~ .form-chip-outline {
+  gap: var(--chkChipOutline-gap-lg);
+  height: var(--chkChipOutline-h-lg);
+  padding: var(--chkChipOutline-pd-lg);
+  border-radius: var(--chkChipOutline-rd-lg);
+  font-size: var(--chkChipOutline-fz-lg);
+}
+.form-chip .checkbox ~ .form-chip-outline::before {
+  width: var(--chkChipOutline-ico-lg);
+  height: var(--chkChipOutline-ico-lg);
+  background: url(../assets/ico_check_chip.svg) no-repeat 0 0;
+  background-size: contain;
+}
+.form-chip .checkbox:checked ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_checked.svg);
+}
+.form-chip .checkbox:disabled ~ .form-chip-outline::before {
+  background-image: url(../assets/ico_check_chip_disabled.svg);
+}
+
+@media (max-width: 1023px) {
+  /* input setting */
+  :root {
+    --fz-display-sm: 2.5rem;
+    --fz-display-md: 3.2rem;
+    --fz-display-lg: 4rem;
+    --fz-heading-sm: 2.5rem;
+    --fz-heading-md: 3.2rem;
+    --fz-heading-lg: 4rem;
+    --fz-title-xxlg: 2.5rem;
+    /* input setting */
+    --input-h-xlg: 5.6rem;
+    --input-px-xlg: 1.6rem;
+    --input-rd-xlg: .8rem;
+    --input-fz-xlg: 1.9rem;
+  }
+  .form-control.xlg {
+    height: 5.6rem;
+    padding: 0 var(--input-px-xlg);
+    border-radius: var(--input-rd-xlg);
+    font-size: var(--input-fz-xlg);
+  }
+}
+
+/*# sourceMappingURL=c_kds.css.map */
