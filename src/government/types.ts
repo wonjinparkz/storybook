@@ -151,4 +151,5 @@ export interface FullBannerCarouselProps {
   autoplayDelay?: number;
   speed?: number;
   loop?: boolean;
+  backgroundColor?: string;
 }

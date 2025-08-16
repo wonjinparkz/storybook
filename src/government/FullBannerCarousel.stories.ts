@@ -38,6 +38,10 @@ const meta: Meta<typeof FullBannerCarousel> = {
       description: '무한 루프 활성화',
       control: { type: 'boolean' }
     },
+    backgroundColor: {
+      description: '캐러셀 배경색상',
+      control: { type: 'color' }
+    },
   }
 };
 
@@ -81,7 +85,8 @@ export const Default: Story = {
     swiperId: 'main-banner-swiper',
     autoplayDelay: 5000,
     speed: 400,
-    loop: true
+    loop: true,
+    backgroundColor: '#D8E4F2'
   },
 };
 
@@ -93,7 +98,8 @@ export const FastTransition: Story = {
     autoplayDelay: 3000,
     speed: 200,
     loop: true,
-    className: 'fast-transition'
+    className: 'fast-transition',
+    backgroundColor: '#E8F4F8'
   },
 };
 
@@ -104,6 +110,7 @@ export const SingleSlide: Story = {
     autoplayDelay: 5000,
     speed: 400,
     loop: false,
+    backgroundColor: '#F0F8FF'
   },
 };
 
@@ -113,6 +120,7 @@ export const NoAutoplay: Story = {
     swiperId: 'banner-manual',
     autoplayDelay: 0, // autoplay 비활성화
     speed: 400,
-    loop: true
+    loop: true,
+    backgroundColor: '#FFF8E7'
   },
 };

@@ -15,7 +15,8 @@ const FullBannerCarousel = ({
   swiperId,
   autoplayDelay = 5000,
   speed = 400,
-  loop = true
+  loop = true,
+  backgroundColor = '#D8E4F2'
 }: FullBannerCarouselProps) => {
   const swiperRef = useRef<any>(null);
   const swiperInstanceRef = useRef<any>(null);
@@ -86,7 +87,7 @@ const FullBannerCarousel = ({
   };
 
   return (
-    <div className={`main-vban-wrap ${className}`}>
+    <div className={`main-vban-wrap ${className}`} style={{ backgroundColor }}>
       <div className="inner">
         <div className={`vb-swiper ${swiperId}`}>
           <div className="swiper" ref={swiperRef}>
