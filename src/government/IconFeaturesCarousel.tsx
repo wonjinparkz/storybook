@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { IconFeaturesCarouselProps } from './types';
 import './styles/index.css';
+import './styles/swiper-minimal.css';
 
 // Swiper 타입 정의 (간단한 구현을 위해)
 declare global {
