@@ -91,27 +91,13 @@
   color: var(--gray-70, #555555);
   text-decoration: none;
   font-size: 0.9rem;
-  transition: all 0.2s ease;
-  border-left: 3px solid transparent;
 }
 
 .drop-list .item-link:hover {
   background-color: var(--secondary-5, #EDF1F5);
   color: var(--secondary, #003675);
-  border-left-color: var(--secondary, #003675);
 }
 
-/* 드롭다운 하단 버튼 */
-.drop-btm-btn {
-  padding: 0.75rem 1rem;
-  border-top: 1px solid var(--gray-20, #E4E4E4);
-  text-align: center;
-}
-
-.drop-btm-btn .btn {
-  font-size: 0.85rem;
-  padding: 0.5rem 1rem;
-}
 
 /* 관련사이트, 빠른서비스 드롭다운 */
 .related-sites .drop-menu,

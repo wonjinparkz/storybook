@@ -166,13 +166,6 @@ const GovernmentHeader = ({
                               </li>
                             ))}
                           </ul>
-                          {dropdown.footer && (
-                            <div className="drop-btm-btn">
-                              <button type="button" className={`btn sm btn-txt ${dropdown.footer.icon} ico-before`}>
-                                {dropdown.footer.text}
-                              </button>
-                            </div>
-                          )}
                         </div>
                       </div>
                     </div>
