@@ -132,3 +132,25 @@ export interface GovernmentFooterProps {
   copyright: string;
   banner?: FooterBanner;
 }
+
+// Full Banner Carousel Types
+export interface CarouselSlide {
+  id: string;
+  title: string;
+  subtitle: string;
+  buttonText: string;
+  buttonUrl: string;
+  image: string;
+  imageAlt: string;
+}
+
+export interface FullBannerCarouselProps {
+  slides: CarouselSlide[];
+  className?: string;
+  swiperId: string;
+  autoplayDelay?: number;
+  speed?: number;
+  loop?: boolean;
+  moreLink?: string;
+  moreLinkText?: string;
+}

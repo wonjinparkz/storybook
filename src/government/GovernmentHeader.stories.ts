@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import GovernmentHeader from './GovernmentHeader';
 
 const meta: Meta<typeof GovernmentHeader> = {
-  title: 'Government/B. Components/Header',
+  title: 'Government/1090. Header & Footer/Header',
   component: GovernmentHeader,
   parameters: {
     layout: 'fullscreen',
