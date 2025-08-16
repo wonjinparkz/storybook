@@ -38,14 +38,6 @@ const meta: Meta<typeof FullBannerCarousel> = {
       description: '무한 루프 활성화',
       control: { type: 'boolean' }
     },
-    moreLink: {
-      description: '더 보기 버튼 링크 URL',
-      control: { type: 'text' }
-    },
-    moreLinkText: {
-      description: '더 보기 버튼 텍스트',
-      control: { type: 'text' }
-    }
   }
 };
 
@@ -89,9 +81,7 @@ export const Default: Story = {
     swiperId: 'main-banner-swiper',
     autoplayDelay: 5000,
     speed: 400,
-    loop: true,
-    moreLink: '/news',
-    moreLinkText: '더 보기'
+    loop: true
   },
 };
 
@@ -112,7 +102,6 @@ export const FastTransition: Story = {
     autoplayDelay: 3000,
     speed: 200,
     loop: true,
-    moreLink: '/news',
     className: 'fast-transition'
   },
 };
@@ -133,7 +122,6 @@ export const NoAutoplay: Story = {
     swiperId: 'banner-manual',
     autoplayDelay: 0, // autoplay 비활성화
     speed: 400,
-    loop: true,
-    moreLink: '/manual-control',
+    loop: true
   },
 };

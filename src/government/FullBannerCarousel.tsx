@@ -15,9 +15,7 @@ const FullBannerCarousel = ({
   swiperId,
   autoplayDelay = 5000,
   speed = 400,
-  loop = true,
-  moreLink,
-  moreLinkText = '더 보기'
+  loop = true
 }: FullBannerCarouselProps) => {
   const swiperRef = useRef<any>(null);
   const swiperInstanceRef = useRef<any>(null);
@@ -140,11 +138,6 @@ const FullBannerCarousel = ({
           
           <div className="swiper-indicator text-center">
             <div className="swiper-pagination"></div>
-            {moreLink && (
-              <a href={moreLink} className="swiper-button-more">
-                <span className="sr-only">{moreLinkText}</span>
-              </a>
-            )}
           </div>
         </div>
       </div>

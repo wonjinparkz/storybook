@@ -16,6 +16,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
+        method: 'alphabetical',
         order: ['*'], // 모든 스토리를 알파벳 순으로 정렬
       },
     },
