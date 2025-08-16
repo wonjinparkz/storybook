@@ -83,3 +83,52 @@ export interface GovernmentHeaderProps {
   menuStructure: MainMenu[];
   submenuInteraction?: 'hover' | 'click';
 }
+
+// Government Footer Types
+export interface FooterQuickLink {
+  title: string;
+  layerTitle: string;
+}
+
+export interface FooterContactInfo {
+  number: string;
+  description?: string;
+}
+
+export interface FooterServiceLink {
+  url: string;
+  text: string;
+}
+
+export interface FooterSocialLink {
+  platform: 'youtube' | 'instagram' | 'facebook' | 'twitter' | 'blog';
+  url: string;
+}
+
+export interface FooterMenuLink {
+  url: string;
+  text: string;
+  isHighlighted?: boolean;
+}
+
+export interface FooterBanner {
+  organization: string;
+  description: string;
+}
+
+export interface GovernmentFooterProps {
+  quickLinks: FooterQuickLink[];
+  logoInfo: {
+    imageUrl: string;
+    text: string;
+  };
+  contactInfo: {
+    address: string;
+    contacts: FooterContactInfo[];
+  };
+  serviceLinks: FooterServiceLink[];
+  socialLinks: FooterSocialLink[];
+  footerMenus: FooterMenuLink[];
+  copyright: string;
+  banner?: FooterBanner;
+}
