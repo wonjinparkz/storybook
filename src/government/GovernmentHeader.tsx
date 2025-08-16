@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { GovernmentHeaderProps } from './types';
 import './styles/index.css';
 import './dropdown-styles.css';
+import './mobile-header.css';
 
 const GovernmentHeader = ({
   etcMenus,

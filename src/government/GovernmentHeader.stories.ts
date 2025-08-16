@@ -232,3 +232,34 @@ export const ClickMode: Story = {
     submenuInteraction: 'click',
   },
 };
+
+export const MobileView: Story = {
+  args: {
+    etcMenus: mockEtcMenus,
+    siteInfo: mockSiteInfo,
+    isLoggedIn: false,
+    menuStructure: mockMenuStructure,
+    submenuInteraction: 'hover',
+  },
+  parameters: {
+    viewport: {
+      defaultViewport: 'mobile1',
+    },
+  },
+};
+
+export const TabletView: Story = {
+  args: {
+    etcMenus: mockEtcMenus,
+    siteInfo: mockSiteInfo,
+    isLoggedIn: true,
+    myGovMenu: mockMyGovMenu,
+    menuStructure: mockMenuStructure,
+    submenuInteraction: 'hover',
+  },
+  parameters: {
+    viewport: {
+      defaultViewport: 'tablet',
+    },
+  },
+};
