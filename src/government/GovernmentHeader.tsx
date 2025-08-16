@@ -8,12 +8,14 @@ const GovernmentHeader = ({
   siteInfo,
   isLoggedIn,
   myGovMenu,
-  menuStructure
+  menuStructure,
+  submenuInteraction = 'hover'
 }: GovernmentHeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMobileMenu, setActiveMobileMenu] = useState(isLoggedIn ? 'mGnb-myGov' : 'mGnb-anchor1');
   const [activeSubmenu, setActiveSubmenu] = useState<Record<string, string>>({});
   const [hoveredMainMenu, setHoveredMainMenu] = useState<number | null>(null);
+  const [clickedMainMenu, setClickedMainMenu] = useState<number | null>(null);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMyGovDropdownOpen, setIsMyGovDropdownOpen] = useState(false);
 
@@ -31,21 +33,22 @@ const GovernmentHeader = ({
     setActiveSubmenu(initialActiveSubmenu);
   }, [menuStructure]);
 
-  // 호버된 메뉴의 첫 번째 서브메뉴 자동 활성화
+  // 활성화된 메뉴의 첫 번째 서브메뉴 자동 활성화
   useEffect(() => {
-    if (hoveredMainMenu !== null) {
-      const currentMenu = menuStructure[hoveredMainMenu];
+    const currentActiveMenu = submenuInteraction === 'click' ? clickedMainMenu : hoveredMainMenu;
+    if (currentActiveMenu !== null) {
+      const currentMenu = menuStructure[currentActiveMenu];
       if (currentMenu?.submenu && currentMenu.submenu.length > 0) {
         const firstInternalSubmenu = currentMenu.submenu.find(sub => sub.type === 'internal');
         if (firstInternalSubmenu) {
           setActiveSubmenu(prev => ({
             ...prev,
-            [`menu-${hoveredMainMenu}`]: firstInternalSubmenu.id
+            [`menu-${currentActiveMenu}`]: firstInternalSubmenu.id
           }));
         }
       }
     }
-  }, [hoveredMainMenu, menuStructure]);
+  }, [hoveredMainMenu, clickedMainMenu, submenuInteraction, menuStructure]);
 
   const handleSubmenuClick = (menuIndex: number, submenuId: string) => {
     setActiveSubmenu(prev => ({
@@ -62,10 +65,18 @@ const GovernmentHeader = ({
     setIsMyGovDropdownOpen(!isMyGovDropdownOpen);
   };
 
+  const handleMainMenuClick = (menuIndex: number, event: React.MouseEvent) => {
+    if (submenuInteraction === 'click') {
+      event.preventDefault();
+      setClickedMainMenu(clickedMainMenu === menuIndex ? null : menuIndex);
+    }
+  };
+
   const closeAllDropdowns = () => {
     setOpenDropdown(null);
     setIsMyGovDropdownOpen(false);
     setHoveredMainMenu(null);
+    setClickedMainMenu(null);
   };
 
   const toggleMobileSubmenu = (submenuId: string) => {
@@ -97,7 +108,10 @@ const GovernmentHeader = ({
     console.log('로그아웃');
   };
 
-  const isAnyMenuOpen = hoveredMainMenu !== null || openDropdown !== null || isMyGovDropdownOpen;
+  // 현재 활성화된 메인 메뉴 결정
+  const activeMainMenu = submenuInteraction === 'click' ? clickedMainMenu : hoveredMainMenu;
+  
+  const isAnyMenuOpen = activeMainMenu !== null || openDropdown !== null || isMyGovDropdownOpen;
 
   return (
     <>
@@ -268,12 +282,20 @@ const GovernmentHeader = ({
                 <li 
                   key={index} 
                   className="li"
-                  onMouseEnter={() => setHoveredMainMenu(index)}
-                  onMouseLeave={() => setHoveredMainMenu(null)}
+                  {...(submenuInteraction === 'hover' && {
+                    onMouseEnter: () => setHoveredMainMenu(index),
+                    onMouseLeave: () => setHoveredMainMenu(null)
+                  })}
                 >
-                  <a href={mainMenu.url} className="mn">{mainMenu.title}</a>
+                  <a 
+                    href={mainMenu.url} 
+                    className="mn"
+                    onClick={(e) => handleMainMenuClick(index, e)}
+                  >
+                    {mainMenu.title}
+                  </a>
                   {mainMenu.submenu && mainMenu.submenu.length > 0 && (
-                    <div className={`w-gnb-wrap ${hoveredMainMenu === index ? 'is-open' : ''}`}>
+                    <div className={`w-gnb-wrap ${activeMainMenu === index ? 'is-open' : ''}`}>
                       <div className="inner">
                         <div className="w-gnb-menu">
                           <div className="menu-wrap">
@@ -308,7 +330,7 @@ const GovernmentHeader = ({
                                     className={`submenu-in ${subMenu.items.length > 6 ? 'between' : ''}`}
                                     id={subMenu.id}
                                     style={{
-                                      display: (hoveredMainMenu === index && activeSubmenu[`menu-${index}`] === subMenu.id) ? 'block' : 'none'
+                                      display: (activeMainMenu === index && activeSubmenu[`menu-${index}`] === subMenu.id) ? 'block' : 'none'
                                     }}
                                   >
                                     <div className="sub-in">

@@ -208,6 +208,7 @@ export const LoggedOut: Story = {
     siteInfo: mockSiteInfo,
     isLoggedIn: false,
     menuStructure: mockMenuStructure,
+    submenuInteraction: 'hover',
   },
 };
 
@@ -218,5 +219,16 @@ export const LoggedIn: Story = {
     isLoggedIn: true,
     myGovMenu: mockMyGovMenu,
     menuStructure: mockMenuStructure,
+    submenuInteraction: 'hover',
+  },
+};
+
+export const ClickMode: Story = {
+  args: {
+    etcMenus: mockEtcMenus,
+    siteInfo: mockSiteInfo,
+    isLoggedIn: false,
+    menuStructure: mockMenuStructure,
+    submenuInteraction: 'click',
   },
 };

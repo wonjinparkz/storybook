@@ -81,4 +81,5 @@ export interface GovernmentHeaderProps {
   isLoggedIn: boolean;
   myGovMenu?: MyGovMenu;
   menuStructure: MainMenu[];
+  submenuInteraction?: 'hover' | 'click';
 }
