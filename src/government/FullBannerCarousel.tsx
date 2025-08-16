@@ -57,18 +57,12 @@ const FullBannerCarousel = ({
       }
     };
 
-    // Swiper 라이브러리 로드
+    // Swiper 라이브러리 로드 (CSS는 로드하지 않음)
     if (!window.Swiper) {
       const script = document.createElement('script');
       script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
       script.onload = initSwiper;
       document.head.appendChild(script);
-
-      // CSS도 로드
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
-      document.head.appendChild(link);
     } else {
       initSwiper();
     }
