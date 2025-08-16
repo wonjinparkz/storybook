@@ -31,24 +31,30 @@ const FullBannerCarousel = ({
           swiperInstanceRef.current.destroy(true, true);
         }
 
-        swiperInstanceRef.current = new window.Swiper(swiperRef.current, {
+        const swiperConfig: any = {
           slidesPerView: 1,
           spaceBetween: 0,
           speed: speed,
           loop: loop,
-          autoplay: {
-            delay: autoplayDelay,
-            disableOnInteraction: false,
-          },
           navigation: {
-            nextEl: `.${swiperId} .swiper-button-next`,
-            prevEl: `.${swiperId} .swiper-button-prev`,
+            nextEl: `.vb-swiper.${swiperId} .swiper-button-next`,
+            prevEl: `.vb-swiper.${swiperId} .swiper-button-prev`,
           },
           pagination: {
-            el: `.${swiperId} .swiper-pagination`,
+            el: `.vb-swiper.${swiperId} .swiper-pagination`,
             clickable: true,
           },
-        });
+        };
+
+        // autoplay 설정 (delay가 0이 아닐 때만 추가)
+        if (autoplayDelay > 0) {
+          swiperConfig.autoplay = {
+            delay: autoplayDelay,
+            disableOnInteraction: false,
+          };
+        }
+
+        swiperInstanceRef.current = new window.Swiper(swiperRef.current, swiperConfig);
       }
     };
 
@@ -84,7 +90,7 @@ const FullBannerCarousel = ({
   return (
     <div className={`main-vban-wrap ${className}`}>
       <div className="inner">
-        <div className={swiperId}>
+        <div className={`vb-swiper ${swiperId}`}>
           <div className="swiper" ref={swiperRef}>
             <ul className="swiper-wrapper">
               {slides.map((slide) => (
