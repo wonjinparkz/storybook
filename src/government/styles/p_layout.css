@@ -2920,4 +2920,18 @@
     width: 100%;
   }
 }
+
+/* 모바일 사이즈 (480px 이하) */
+@media (max-width: 480px) {
+  /* 로고 텍스트 더 작게 */
+  #header .head-body .logo a {
+    font-size: 1.6rem; /* 더 작은 화면에서 추가 축소 */
+  }
+
+  /* 로고 슬로건 이미지 - 더 작게 */
+  #header .inner .logo a::before {
+    max-height: 2.3em; /* 더 작은 크기 */
+    padding-left: 0.5rem !important; /* 12px로 더 축소 */
+  }
+}
 /* *********************** gnb tobe *********************** */

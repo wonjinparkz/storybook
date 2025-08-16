@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { GovernmentHeaderProps } from './types';
 import './styles/index.css';
 import './dropdown-styles.css';
-import './mobile-header.css';
 
 const GovernmentHeader = ({
   etcMenus,
@@ -19,6 +18,7 @@ const GovernmentHeader = ({
   const [clickedMainMenu, setClickedMainMenu] = useState<number | null>(null);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMyGovDropdownOpen, setIsMyGovDropdownOpen] = useState(false);
+  const [openMobileSubmenus, setOpenMobileSubmenus] = useState<Record<string, boolean>>({});
 
   // 각 메인 메뉴의 첫 번째 서브메뉴를 기본 활성화
   useEffect(() => {
@@ -51,6 +51,20 @@ const GovernmentHeader = ({
     }
   }, [hoveredMainMenu, clickedMainMenu, submenuInteraction, menuStructure]);
 
+  // 모바일 메뉴 열림/닫힘 시 body 스크롤 제어
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    // 컴포넌트 언마운트 시 스크롤 복원
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const handleSubmenuClick = (menuIndex: number, submenuId: string) => {
     setActiveSubmenu(prev => ({
       ...prev,
@@ -81,17 +95,10 @@ const GovernmentHeader = ({
   };
 
   const toggleMobileSubmenu = (submenuId: string) => {
-    const element = document.getElementById(submenuId);
-    if (element) {
-      const isVisible = element.style.display !== 'none';
-      element.style.display = isVisible ? 'none' : 'block';
-      
-      // 토글 아이콘 회전
-      const button = document.querySelector(`[data-toggle-target="${submenuId}"]`);
-      if (button) {
-        button.classList.toggle('active');
-      }
-    }
+    setOpenMobileSubmenus(prev => ({
+      ...prev,
+      [submenuId]: !prev[submenuId]
+    }));
   };
 
   const openTotalSearch = () => {
@@ -380,8 +387,13 @@ const GovernmentHeader = ({
       {/* 모바일 : 전체메뉴 */}
       <div 
         id="m-gnb" 
-        className={`m-gnb-wrap ${isMobileMenuOpen ? 'open' : ''}`}
-        style={{ display: isMobileMenuOpen ? 'block' : 'none' }}
+        className={`m-gnb-wrap ${isMobileMenuOpen ? 'is-open' : ''}`}
+        onClick={(e) => {
+          // 배경(오버레이) 클릭 시 메뉴 닫기
+          if (e.target === e.currentTarget) {
+            setIsMobileMenuOpen(false);
+          }
+        }}
       >
         <div className="m-gnb-in">
           <div className="m-gnb-head">
@@ -503,8 +515,7 @@ const GovernmentHeader = ({
                                   {/* 3depth가 있는 경우 토글 버튼으로 */}
                                   <button 
                                     type="button" 
-                                    className="sm mobile-toggle-btn" 
-                                    data-toggle-target={`mobile-sub-${index}-${subIndex}`}
+                                    className={`sm mobile-toggle-btn ${openMobileSubmenus[`mobile-sub-${index}-${subIndex}`] ? 'active' : ''}`}
                                     onClick={() => toggleMobileSubmenu(`mobile-sub-${index}-${subIndex}`)}
                                   >
                                     <span className="toggle-text">{subMenu.title}</span>
@@ -513,7 +524,7 @@ const GovernmentHeader = ({
                                   <ul 
                                     className="sub-ul mobile-sub-menu" 
                                     id={`mobile-sub-${index}-${subIndex}`} 
-                                    style={{ display: 'none' }}
+                                    style={{ display: openMobileSubmenus[`mobile-sub-${index}-${subIndex}`] ? 'block' : 'none' }}
                                   >
                                     {subMenu.items.map((item, itemIndex) => (
                                       <li key={itemIndex}>
