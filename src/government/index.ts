@@ -6,6 +6,7 @@ export { default as IconFeaturesCarousel } from './IconFeaturesCarousel';
 export { default as ComplexFeaturesCarousel } from './ComplexFeaturesCarousel';
 export { default as ContentsCardCarousel } from './ContentsCardCarousel';
 export { default as ApplyPage } from './ApplyPage';
+export { default as ContentsPage } from './ContentsPage';
 
 // 프로바이더 및 유틸리티 exports
 export { 
