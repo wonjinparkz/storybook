@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { ComplexFeaturesCarouselProps } from './types';
+import { withGovernmentAssets } from './components/GovernmentProvider';
 import './styles/index.css';
 import './styles/swiper-minimal.css';
 
@@ -196,4 +197,4 @@ const ComplexFeaturesCarousel = ({
   );
 };
 
-export default ComplexFeaturesCarousel;
+export default withGovernmentAssets(ComplexFeaturesCarousel);

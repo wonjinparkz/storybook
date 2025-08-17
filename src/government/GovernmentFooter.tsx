@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { GovernmentFooterProps } from './types';
+import { withGovernmentAssets } from './components/GovernmentProvider';
 import './styles/index.css';
 
 const GovernmentFooter = ({
@@ -149,4 +150,4 @@ const GovernmentFooter = ({
   );
 };
 
-export default GovernmentFooter;
+export default withGovernmentAssets(GovernmentFooter);

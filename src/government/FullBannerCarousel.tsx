@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { FullBannerCarouselProps } from './types';
+import { withGovernmentAssets } from './components/GovernmentProvider';
 import './styles/index.css';
 import './styles/swiper-minimal.css';
 
@@ -141,4 +142,4 @@ const FullBannerCarousel = ({
   );
 };
 
-export default FullBannerCarousel;
+export default withGovernmentAssets(FullBannerCarousel);

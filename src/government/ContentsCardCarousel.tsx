@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ContentsCardCarouselProps } from './types';
+import { withGovernmentAssets } from './components/GovernmentProvider';
 import './styles/index.css';
 import './styles/swiper-minimal.css';
 
@@ -224,4 +225,4 @@ const ContentsCardCarousel = ({
   );
 };
 
-export default ContentsCardCarousel;
+export default withGovernmentAssets(ContentsCardCarousel);

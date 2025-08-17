@@ -1,0 +1,319 @@
+/* Contents Page Specific Styles */
+
+/* 3depth 메뉴 인라인 스타일 */
+.depth3-container {
+  position: relative;
+}
+
+.subm.has-depth3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 30px;
+  position: relative;
+}
+
+/* 활성화된 메인 메뉴 스타일 */
+.subm.active,
+.subm.has-depth3.active {
+  color: #007bff;
+  font-weight: 600;
+  background-color: #f0f7ff;
+  border-radius: 4px;
+}
+
+.subm:hover {
+  color: #0056b3;
+  background-color: #f8f9fa;
+}
+
+.depth3-toggle {
+  position: absolute;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s;
+}
+
+.depth3-toggle::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #666;
+  border-bottom: 2px solid #666;
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+
+.has-depth3[aria-expanded="true"] .depth3-toggle::after {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+.depth3-ul {
+  padding-left: 20px;
+  margin-top: 8px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.depth3-ul[style*="display: none"] {
+  max-height: 0;
+  opacity: 0;
+}
+
+.depth3-ul:not([style*="display: none"]) {
+  max-height: 500px; /* 충분한 높이 설정 */
+  opacity: 1;
+}
+
+.depth3-ul li {
+  margin-bottom: 8px;
+}
+
+.depth3-link {
+  display: block;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.depth3-link:hover {
+  color: #333;
+  background-color: #f5f5f5;
+  border-left-color: #007bff;
+}
+
+/* 활성화된 서브메뉴 스타일 */
+.depth3-link.active,
+.depth3-link[aria-current="page"] {
+  color: #007bff;
+  font-weight: 600;
+  background-color: #e7f3ff;
+  border-left-color: #007bff;
+}
+
+/* acco-body 높이 자동 조정 */
+.acco-body {
+  overflow: visible !important;
+  height: auto !important;
+  transition: none; /* 초기 로드 시 애니메이션 제거 */
+}
+
+.acco-in {
+  overflow: visible !important;
+}
+
+/* 페이지 로드 완료 후 애니메이션 활성화 */
+.acco-body.transitions-enabled {
+  transition: all 0.3s ease;
+}
+
+/* 드롭다운 메뉴 활성화 스타일 */
+.drop-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 10;
+  min-width: 200px;
+}
+
+.drop-menu.active {
+  display: block;
+}
+
+.krds-drop-wrap {
+  position: relative;
+}
+
+.drop-btn {
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.drop-btn:hover {
+  background-color: #f8f9fa;
+}
+
+.drop-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drop-list li {
+  border-bottom: 1px solid #eee;
+}
+
+.drop-list li:last-child {
+  border-bottom: none;
+}
+
+.item-link {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.item-link:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+/* 좌측 메뉴 스타일 개선 */
+.left-menu {
+  width: 280px;
+  min-height: 100vh;
+  background: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+}
+
+.left-in {
+  padding: 2rem 1.5rem;
+}
+
+.lnb-tit {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+.acco-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.acco-list .li {
+  margin-bottom: 0.5rem;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.acco-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.acco-head .tit {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  color: #495057;
+}
+
+.acco-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.acco-btn:hover {
+  background-color: #e9ecef;
+}
+
+.acco-btn::after {
+  content: '▼';
+  font-size: 12px;
+  color: #6c757d;
+  transition: transform 0.3s;
+}
+
+.acco-btn[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.sub-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sub-ul li {
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.sub-ul li:last-child {
+  border-bottom: none;
+}
+
+.subm {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #495057;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.subm:hover {
+  color: #007bff;
+  background-color: #f8f9fa;
+}
+
+/* 메인 콘텐츠 영역 */
+.contents {
+  flex: 1;
+  padding: 2rem;
+  max-width: calc(100% - 280px);
+}
+
+.in-between {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .in-between {
+    flex-direction: column;
+  }
+  
+  .left-menu {
+    width: 100%;
+    min-height: auto;
+  }
+  
+  .contents {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  
+  .left-in {
+    padding: 1rem;
+  }
+}

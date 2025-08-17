@@ -226,3 +226,197 @@ export interface ContentsCardCarouselProps {
   moreText?: string;
   className?: string;
 }
+
+// Apply Page Types
+export interface BreadcrumbItem {
+  text: string;
+  url?: string;
+}
+
+export interface QuickNavItem {
+  id: string;
+  text: string;
+  active: boolean;
+}
+
+export interface ApplyButton {
+  text: string;
+  sub_text: string;
+}
+
+export interface ServiceOverview {
+  service_target: string;
+  service_type: string;
+  selection_criteria: string;
+  application_methods: string[];
+  contact: string;
+}
+
+export interface PaymentTableHeader {
+  headers: string[];
+}
+
+export interface PaymentTableRow {
+  [key: number]: string;
+}
+
+export interface PaymentTable {
+  headers: string[];
+  rows: string[][];
+}
+
+export interface SelectionNote {
+  title: string;
+  content: string | {
+    formula: string;
+    details: string[];
+  };
+}
+
+export interface SelectionSubItem {
+  text: string;
+  note?: SelectionNote;
+}
+
+export interface SelectionItem {
+  text?: string;
+  sub_items?: (string | SelectionSubItem)[];
+  note?: SelectionNote;
+}
+
+export interface SelectionCriteriaSection {
+  items: (string | SelectionItem)[];
+}
+
+export interface SelectionCriteria {
+  disability: SelectionCriteriaSection;
+  age: SelectionCriteriaSection;
+  income: SelectionCriteriaSection;
+}
+
+export interface ServiceDetail {
+  provision_content: string;
+  payment_table: PaymentTable;
+  selection_criteria: SelectionCriteria;
+}
+
+export interface ApplicationProcess {
+  num: string;
+  title: string;
+  period: string;
+  description: string;
+}
+
+export interface ApplicationSection {
+  methods: string[];
+  process: ApplicationProcess[];
+}
+
+export interface DocumentItem {
+  title: string;
+  file_size: string;
+  file_type: string;
+}
+
+export interface TogetherService {
+  id: string;
+  title: string;
+  description: string;
+  disabled: boolean;
+  checked: boolean;
+}
+
+export interface TogetherServices {
+  description: string;
+  services: TogetherService[];
+}
+
+export interface ReferenceForm {
+  title: string;
+  file_size: string;
+  file_type: string;
+}
+
+export interface WebsiteLink {
+  text: string;
+  url: string;
+}
+
+export interface AdditionalInfo {
+  reference_forms?: ReferenceForm[];
+  related_websites?: WebsiteLink[];
+  legal_basis?: WebsiteLink[];
+  welfare_case?: string;
+}
+
+export interface ChangeHistoryItem {
+  date: string;
+  content: string;
+}
+
+export interface ApplyPageSections {
+  overview: ServiceOverview;
+  detail: ServiceDetail;
+  application: ApplicationSection;
+  documents: DocumentItem[];
+  together_services: TogetherServices;
+  additional_info: AdditionalInfo;
+  change_history: ChangeHistoryItem[];
+}
+
+export interface ApplyPageProps {
+  breadcrumb: BreadcrumbItem[];
+  title: string;
+  description: string;
+  quick_nav: QuickNavItem[];
+  apply_button: ApplyButton;
+  sections: ApplyPageSections;
+  className?: string;
+}
+
+// Contents Page Types
+export interface SidebarSubItem {
+  title: string;
+  url: string;
+}
+
+export interface SidebarMenuItem {
+  title: string;
+  url: string;
+  subitems?: SidebarSubItem[];
+}
+
+export interface SidebarCategory {
+  title: string;
+  expanded: boolean;
+  items: SidebarMenuItem[];
+}
+
+export interface SidebarMenu {
+  title: string;
+  menu: SidebarCategory[];
+}
+
+export interface DropdownItem {
+  text: string;
+  url: string;
+}
+
+export interface PageDropdown {
+  current: string;
+  items: DropdownItem[];
+}
+
+export interface PageInfo {
+  title: string;
+  dropdown?: PageDropdown;
+}
+
+export interface ContentsPageProps {
+  sidebar: SidebarMenu;
+  breadcrumb: BreadcrumbItem[];
+  page: PageInfo;
+  content: string;
+  currentUrl?: string;
+  className?: string;
+}

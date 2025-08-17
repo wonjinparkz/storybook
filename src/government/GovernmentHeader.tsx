@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { GovernmentHeaderProps } from './types';
+import { withGovernmentAssets } from './components/GovernmentProvider';
 import './styles/index.css';
 import './dropdown-styles.css';
 
@@ -569,4 +570,4 @@ const GovernmentHeader = ({
   );
 };
 
-export default GovernmentHeader;
+export default withGovernmentAssets(GovernmentHeader);

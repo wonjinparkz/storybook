@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { IconFeaturesCarouselProps } from './types';
+import { withGovernmentAssets } from './components/GovernmentProvider';
 import './styles/index.css';
 import './styles/swiper-minimal.css';
 
@@ -148,4 +149,4 @@ const IconFeaturesCarousel = ({
   );
 };
 
-export default IconFeaturesCarousel;
+export default withGovernmentAssets(IconFeaturesCarousel);
