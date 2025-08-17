@@ -173,3 +173,33 @@ export interface IconFeaturesCarouselProps {
   speed?: number;
   className?: string;
 }
+
+// Complex Features Carousel Types
+export interface ComplexCarouselIntro {
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonUrl: string;
+}
+
+export interface ComplexCarouselCard {
+  id: string;
+  title: string;
+  description: string;
+  url: string;
+  imageClass: string;
+  imageUrl?: string;
+  imageAlt?: string;
+}
+
+export interface ComplexFeaturesCarouselProps {
+  title: string;
+  intro: ComplexCarouselIntro;
+  cards: ComplexCarouselCard[];
+  swiperId: string;
+  autoplay?: boolean;
+  autoplayDelay?: number;
+  speed?: number;
+  loop?: boolean;
+  className?: string;
+}
