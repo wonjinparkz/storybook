@@ -114,6 +114,28 @@
   position: relative;
 }
 
+/* IconFeaturesCarousel 아이콘 세로 중앙 정렬 */
+.menu-list.type2 .menu-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-height: 80px;
+}
+
+.menu-list.type2 .menu-item .ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.menu-list.type2 .menu-item .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
 /* FullBannerCarousel 전용 최소 스타일 */
 .vb-swiper .swiper-wrapper {
   align-items: center;
