@@ -166,31 +166,11 @@ const baseContentsPageData: ContentsPageProps = {
     <div class="conts-wrap">
       <h3 class="sec-tit">주요 서비스</h3>
       
-      <div class="card-wrap">
-        <div class="card-item">
-          <h4 class="card-tit">노인돌봄서비스</h4>
-          <p class="card-desc">혼자 힘으로 일상생활을 영위하기 어려운 노인에게 가사·활동 지원 등 종합적인 돌봄서비스를 제공합니다.</p>
-          <div class="btn-wrap">
-            <a href="/welfare/elderly/care" class="btn primary sm">자세히보기</a>
-          </div>
-        </div>
-        
-        <div class="card-item">
-          <h4 class="card-tit">노인일자리사업</h4>
-          <p class="card-desc">어르신의 경험과 능력을 활용한 다양한 일자리를 제공하여 활기찬 노후생활을 지원합니다.</p>
-          <div class="btn-wrap">
-            <a href="/welfare/elderly/employment" class="btn primary sm">자세히보기</a>
-          </div>
-        </div>
-        
-        <div class="card-item">
-          <h4 class="card-tit">경로우대제도</h4>
-          <p class="card-desc">대중교통, 공공시설 이용 시 요금 할인 등 다양한 경로우대 혜택을 제공합니다.</p>
-          <div class="btn-wrap">
-            <a href="/welfare/elderly/preferential" class="btn primary sm">자세히보기</a>
-          </div>
-        </div>
-      </div>
+      <ul class="info-list decimal">
+        <li><strong>노인돌봄서비스</strong>: 혼자 힘으로 일상생활을 영위하기 어려운 노인에게 가사·활동 지원 등 종합적인 돌봄서비스를 제공합니다.</li>
+        <li><strong>노인일자리사업</strong>: 어르신의 경험과 능력을 활용한 다양한 일자리를 제공하여 활기찬 노후생활을 지원합니다.</li>
+        <li><strong>경로우대제도</strong>: 대중교통, 공공시설 이용 시 요금 할인 등 다양한 경로우대 혜택을 제공합니다.</li>
+      </ul>
     </div>
     
     <div class="conts-wrap">
