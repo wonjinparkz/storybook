@@ -203,3 +203,26 @@ export interface ComplexFeaturesCarouselProps {
   loop?: boolean;
   className?: string;
 }
+
+// Contents Card Carousel Types
+export interface ContentsCard {
+  id: string;
+  title: string;
+  description: string;
+  url: string;
+  badge?: string;
+  buttonText?: string;
+}
+
+export interface ContentsCardCarouselProps {
+  title: string;
+  cards: ContentsCard[];
+  swiperId: string;
+  autoplay?: boolean;
+  autoplayDelay?: number;
+  speed?: number;
+  loop?: boolean;
+  moreLink?: string;
+  moreText?: string;
+  className?: string;
+}
