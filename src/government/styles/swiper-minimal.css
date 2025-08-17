@@ -34,9 +34,7 @@
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  top: 50%;
-  width: calc(var(--swiper-navigation-size) / 44 * 27);
-  height: var(--swiper-navigation-size);
+  top: 45%;
   margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
   z-index: 10;
   cursor: pointer;
@@ -103,6 +101,17 @@
 
 .menu-list.type2 .swiper-slide {
   height: auto;
+}
+
+/* IconFeaturesCarousel 네비게이션 버튼 중앙 정렬 */
+.menu-list.type2 .menu-swiper-in .swiper-button-next,
+.menu-list.type2 .menu-swiper-in .swiper-button-prev {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-list.type2 .menu-swiper-in {
+  position: relative;
 }
 
 /* FullBannerCarousel 전용 최소 스타일 */
