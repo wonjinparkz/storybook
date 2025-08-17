@@ -3,7 +3,7 @@ import ContentsPage from './ContentsPage';
 import { ContentsPageProps } from './types';
 
 const meta: Meta<typeof ContentsPage> = {
-  title: 'Government/Pages/ContentsPage',
+  title: 'Government/D. Page/ContentsPage',
   component: ContentsPage,
   parameters: {
     layout: 'fullscreen',
