@@ -4,7 +4,7 @@ import { withGovernmentAssets } from './components/GovernmentProvider';
 import './styles/index.css';
 import './styles/government-interactions.css';
 
-const ContentsPage = ({
+const ContentsListPage = ({
   sidebar,
   breadcrumb,
   page,
@@ -269,9 +269,13 @@ const ContentsPage = ({
 
           {/* 콘텐츠 본문 */}
           <div className="conts-wrap">
-                <div className="conts-wrap" dangerouslySetInnerHTML={{ __html: content }} />
+            <div className="conts-wrap">
+              <div className="conts-wrap">
+                <div dangerouslySetInnerHTML={{ __html: content }} />
               </div>
             </div>
+          </div>
+        </div>
       </div>
 
       {/* 외부 클릭 시 드롭다운 닫기 */}
@@ -293,4 +297,4 @@ const ContentsPage = ({
   );
 };
 
-export default withGovernmentAssets(ContentsPage);
+export default withGovernmentAssets(ContentsListPage);
