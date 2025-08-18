@@ -2796,7 +2796,7 @@
   align-items: normal;
   justify-content: flex-start;
   flex-direction: column;
-  gap: var(--spacer-6);
+  gap: var(--spacer-10);
 }
 .txt-box.bg-white .tbl-no-data {
   display: flex;

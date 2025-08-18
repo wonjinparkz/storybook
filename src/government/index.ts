@@ -9,6 +9,7 @@ export { default as ApplyPage } from './ApplyPage';
 export { default as ContentsPage } from './ContentsPage';
 export { default as ContentsListPage } from './ContentsListPage';
 export { default as ContentsSearchPage } from './ContentsSearchPage';
+export { default as StepProcessPage } from './StepProcessPage';
 export { default as ContentsSidebar } from './ContentsSidebar';
 export { default as CardContents } from './CardContents';
 export { default as FootContents } from './FootContents';

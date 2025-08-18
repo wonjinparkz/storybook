@@ -1,0 +1,56 @@
+/* 체크박스 그룹 여백 조정 - 더 컴팩트하게 */
+.checkbox-group-compact .box-sec {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.checkbox-group-compact .form-group {
+    margin-bottom: 8px !important;
+    padding: 0 !important;
+}
+
+.checkbox-group-compact .box-sec:last-child .form-group {
+    margin-bottom: 0 !important;
+}
+
+.checkbox-group-compact .form-check {
+    margin-bottom: 0 !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+
+.checkbox-group-compact .form-conts {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 약관 박스 스타일 */
+.terms-content-box {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #e9ecef;
+}
+
+.terms-content-box h5 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.terms-content-box p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.terms-content-box ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.terms-content-box li {
+    margin-bottom: 5px;
+}
