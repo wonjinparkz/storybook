@@ -129,7 +129,7 @@ const ComplexFeaturesCarousel = ({
             />
             <a 
               href={intro.buttonUrl} 
-              className="btn sm btn-txt ico-more contents-btn-tl"
+              className="btn sm btn-txt ico-plus contents-btn-tl"
               onClick={(e) => {
                 e.preventDefault();
                 handleIntroClick(intro.buttonUrl);

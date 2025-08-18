@@ -165,12 +165,6 @@
   transition: font-weight 0.2s ease;
 }
 
-.contents-swiper-in .d-card .c-btn .btn:hover,
-.service-swiper-in .d-card .c-btn .btn:hover {
-  background: transparent !important;
-  font-weight: bold;
-}
-
 .contents-swiper-in .d-card .c-btn,
 .service-swiper-in .d-card .c-btn {
   text-align: left;

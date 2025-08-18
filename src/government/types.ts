@@ -224,6 +224,7 @@ export interface ContentsCardCarouselProps {
   loop?: boolean;
   moreLink?: string;
   moreText?: string;
+  showBadges?: boolean;
   className?: string;
 }
 

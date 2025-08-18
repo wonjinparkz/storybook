@@ -21,6 +21,7 @@ const ContentsCardCarousel = ({
   loop = true,
   moreLink,
   moreText = '더보기',
+  showBadges = true,
   className = ''
 }: ContentsCardCarouselProps) => {
   const swiperRef = useRef<any>(null);
@@ -156,7 +157,7 @@ const ContentsCardCarousel = ({
                       <div className="d-card line">
                         <div className="in">
                           <div className="text">
-                            {card.badge && (
+                            {showBadges && card.badge && (
                               <p className="c-badge">
                                 <span className="badge">{card.badge}</span>
                               </p>

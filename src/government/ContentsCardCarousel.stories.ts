@@ -50,6 +50,10 @@ const meta: Meta<typeof ContentsCardCarousel> = {
       description: '더보기 버튼 텍스트',
       control: { type: 'text' }
     },
+    showBadges: {
+      description: '배지 표시 여부',
+      control: { type: 'boolean' }
+    },
     className: {
       description: '추가 CSS 클래스명',
       control: { type: 'text' }
@@ -60,7 +64,7 @@ const meta: Meta<typeof ContentsCardCarousel> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// 예제 카드 데이터
+// 예제 카드 데이터 (모든 카드에 배지 적용)
 const mockCards = [
   {
     id: 'content-1',
@@ -83,6 +87,7 @@ const mockCards = [
     title: '예방접종 스케줄링',
     description: '고양이의 나이와 건강상태에 맞는 맞춤형 예방접종 일정을 관리합니다.',
     url: '/services/vaccination-schedule',
+    badge: '필수',
     buttonText: '일정확인'
   },
   {
@@ -98,6 +103,7 @@ const mockCards = [
     title: '행동교정 상담',
     description: '고양이의 문제행동 개선을 위한 전문가 상담 서비스를 제공합니다.',
     url: '/services/behavior-consultation',
+    badge: '전문',
     buttonText: '상담받기'
   },
   {
@@ -141,6 +147,7 @@ export const WithAutoplay: Story = {
         title: '세금 납부',
         description: '지방세, 국세를 온라인으로 간편하게 납부할 수 있습니다.',
         url: '/gov-services/tax-payment',
+        badge: '간편',
         buttonText: '납부하기'
       },
       {
@@ -183,6 +190,13 @@ export const MinimalCards: Story = {
 };
 
 export const NoBadges: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: '배지 표시를 비활성화한 버전입니다. showBadges: false 설정으로 모든 배지를 숨깁니다.'
+      }
+    }
+  },
   args: {
     title: '기본 서비스 안내',
     cards: [
@@ -191,6 +205,7 @@ export const NoBadges: Story = {
         title: '고양이 등록',
         description: '새로운 가족이 된 고양이를 공식 등록하는 서비스입니다.',
         url: '/services/registration',
+        badge: '기본', // 배지는 있지만 showBadges: false로 숨김
         buttonText: '등록하기'
       },
       {
@@ -198,6 +213,7 @@ export const NoBadges: Story = {
         title: '건강 관리',
         description: '고양이의 건강상태를 체계적으로 관리할 수 있습니다.',
         url: '/services/health-management',
+        badge: '관리',
         buttonText: '관리하기'
       },
       {
@@ -205,13 +221,15 @@ export const NoBadges: Story = {
         title: '교육 프로그램',
         description: '초보 집사를 위한 고양이 돌봄 교육을 제공합니다.',
         url: '/services/education',
+        badge: '교육',
         buttonText: '교육신청'
       }
     ],
     swiperId: 'no-badge-swiper',
     autoplay: false,
     speed: 400,
-    loop: true
+    loop: true,
+    showBadges: false
   },
 };
 
