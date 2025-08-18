@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import ContentsSearchPage from './ContentsSearchPage';
-import { ContentsPageProps } from './types';
+import { ContentsPageWithSidebarProps } from './types';
 
 const meta: Meta<typeof ContentsSearchPage> = {
   title: 'Government/Z. Page/ContentsSearchPage',
@@ -47,7 +47,7 @@ export default meta;
 type Story = StoryObj<typeof ContentsSearchPage>;
 
 // 기본 콘텐츠 검색 페이지 데이터
-const baseContentsSearchPageData: ContentsPageProps = {
+const baseContentsSearchPageData: ContentsPageWithSidebarProps = {
   sidebar: {
     title: '통합검색',
     menu: [
@@ -695,8 +695,7 @@ export const PolicySearch: Story = {
           </ul>
         </div>
       </div>
-    `,
-    currentUrl: '/search/category/policy'
+    `
   },
   parameters: {
     docs: {

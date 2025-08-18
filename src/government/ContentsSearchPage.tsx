@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ContentsPageProps } from './types';
+import { ContentsPageWithSidebarProps } from './types';
 import { withGovernmentAssets } from './components/GovernmentProvider';
 import { initializeContentsListPageInteractions, ContentsListPageInteractions } from './scripts/contents-list-page-interactions';
 import ContentsSidebar from './ContentsSidebar';
@@ -14,7 +14,7 @@ const ContentsSearchPage = ({
   content,
   currentUrl = '',
   className = ''
-}: ContentsPageProps) => {
+}: ContentsPageWithSidebarProps) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [interactions, setInteractions] = useState<ContentsListPageInteractions | null>(null);
 
