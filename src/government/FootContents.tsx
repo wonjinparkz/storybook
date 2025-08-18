@@ -43,21 +43,7 @@ const FootContents = ({
                 {buttonUrl ? (
                   <a 
                     href={buttonUrl} 
-                    className="btn sm btn-txt ico-more"
-                    style={{
-                      textAlign: 'left',
-                      backgroundColor: 'transparent',
-                      justifyContent: 'flex-start'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = '#0066cc';
-                      // 화살표 아이콘도 같은 색상으로 변경
-                      e.currentTarget.style.setProperty('--icon-color', '#0066cc');
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = '';
-                      e.currentTarget.style.removeProperty('--icon-color');
-                    }}
+                    className="btn sm btn-txt ico-more contents-btn-tl"
                     onClick={(e) => {
                       e.preventDefault();
                       handleButtonClick();
@@ -68,21 +54,7 @@ const FootContents = ({
                 ) : (
                   <button 
                     type="button" 
-                    className="btn sm btn-txt ico-more"
-                    style={{
-                      textAlign: 'left',
-                      backgroundColor: 'transparent',
-                      justifyContent: 'flex-start'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = '#0066cc';
-                      // 화살표 아이콘도 같은 색상으로 변경
-                      e.currentTarget.style.setProperty('--icon-color', '#0066cc');
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = '';
-                      e.currentTarget.style.removeProperty('--icon-color');
-                    }}
+                    className="btn sm btn-txt ico-more contents-btn-tl"
                     onClick={handleButtonClick}
                   >
                     {buttonText}

@@ -515,3 +515,31 @@ export interface FootContentsProps {
   hasBackground?: boolean;
   className?: string;
 }
+
+// Tab Contents Types
+export interface TabItem {
+  id: string;
+  title: string;
+  description: string;
+  url: string;
+  image?: string;
+  imageAlt?: string;
+  buttonText: string;
+}
+
+export interface Tab {
+  id: string;
+  label: string;
+  panelId: string;
+  active: boolean;
+  items?: TabItem[];
+  emptyMessage?: string;
+}
+
+export interface TabContentsProps {
+  title: string;
+  tabs: Tab[];
+  moreLink?: string;
+  moreText?: string;
+  className?: string;
+}

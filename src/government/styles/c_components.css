@@ -1760,4 +1760,49 @@
   transform: rotate(-90deg);
 }
 
+/* ========================================
+   C. Components 공통 스타일 (커스텀)
+   ======================================== */
+
+/* Contents 컴포넌트 공통 버튼 스타일 */
+.contents-btn-tl {
+  text-align: left !important;
+  background-color: transparent !important;
+  justify-content: flex-start !important;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* 호버 효과 - 텍스트와 화살표 색상 변경 */
+.contents-btn-tl:hover {
+  color: #0066cc !important;
+}
+
+/* 호버 시 화살표 아이콘 색상 변경 */
+.contents-btn-tl:hover::after,
+.contents-btn-tl[style*="--icon-color"]::after {
+  border-color: var(--icon-color, #0066cc) !important;
+}
+
+/* TabContents 내부 카드의 버튼 스타일 */
+.tab-conts .c-btn .btn.sm.btn-txt.ico-more,
+.contents-btn-card {
+  text-align: left !important;
+  background-color: transparent !important;
+  justify-content: flex-start !important;
+}
+
+.tab-conts .c-btn .btn.sm.btn-txt.ico-more:hover,
+.contents-btn-card:hover {
+  color: #0066cc !important;
+}
+
+.tab-conts .c-btn .btn.sm.btn-txt.ico-more:hover::after,
+.contents-btn-card:hover::after {
+  border-color: #0066cc !important;
+}
+
 /*# sourceMappingURL=c_components.css.map */

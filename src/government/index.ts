@@ -12,6 +12,7 @@ export { default as ContentsSearchPage } from './ContentsSearchPage';
 export { default as ContentsSidebar } from './ContentsSidebar';
 export { default as CardContents } from './CardContents';
 export { default as FootContents } from './FootContents';
+export { default as TabContents } from './TabContents';
 
 // 프로바이더 및 유틸리티 exports
 export { 
