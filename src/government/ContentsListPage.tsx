@@ -1,88 +1,39 @@
 import { useState, useEffect } from 'react';
-import { ContentsPageProps, SidebarCategory, SidebarMenuItem } from './types';
+import { ContentsListPageProps, ListItem, SortOption } from './types';
 import { withGovernmentAssets } from './components/GovernmentProvider';
+import { initializeContentsListPageInteractions, ContentsListPageInteractions } from './scripts/contents-list-page-interactions';
 import './styles/index.css';
 import './styles/government-interactions.css';
+import './styles/contents-list-page.css';
 
 const ContentsListPage = ({
-  sidebar,
   breadcrumb,
   page,
-  content,
+  description,
+  controls,
+  items,
+  pagination,
   currentUrl = '',
   className = ''
-}: ContentsPageProps) => {
-  const [expandedCategories, setExpandedCategories] = useState<Set<number>>(new Set());
-  const [expandedDepth3, setExpandedDepth3] = useState<Set<string>>(new Set());
+}: ContentsListPageProps) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [interactions, setInteractions] = useState<ContentsListPageInteractions | null>(null);
+  const [activeSortOption, setActiveSortOption] = useState<string>(
+    controls?.sortOptions.find(opt => opt.active)?.value || ''
+  );
+  const [currentPageSize, setCurrentPageSize] = useState<number>(
+    controls?.pageSize || 10
+  );
 
-  // 현재 URL과 매칭되는 메뉴 확인
-  const isMenuActive = (url: string): boolean => {
-    if (!currentUrl) return false;
-    return currentUrl.includes(url) || currentUrl === url.replace(/^\/+|\/+$/g, '');
-  };
-
-  // 카테고리에 활성 메뉴가 있는지 확인
-  const categoryHasActive = (category: SidebarCategory): boolean => {
-    return category.items.some(item => {
-      if (isMenuActive(item.url)) return true;
-      if (item.subitems) {
-        return item.subitems.some(subitem => isMenuActive(subitem.url));
-      }
-      return false;
-    });
-  };
-
-  // 메뉴 아이템에 활성 서브메뉴가 있는지 확인
-  const itemHasActiveSubitem = (item: SidebarMenuItem): boolean => {
-    if (!item.subitems) return false;
-    return item.subitems.some(subitem => isMenuActive(subitem.url));
-  };
-
-  // 초기 확장 상태 설정
+  // 컴포넌트 마운트 시 상호작용 초기화 및 언마운트 시 정리
   useEffect(() => {
-    const initialExpandedCategories = new Set<number>();
-    const initialExpandedDepth3 = new Set<string>();
-
-    sidebar.menu.forEach((category, index) => {
-      if (category.expanded || categoryHasActive(category)) {
-        initialExpandedCategories.add(index);
-      }
-
-      category.items.forEach((item, itemIndex) => {
-        if (item.subitems && itemHasActiveSubitem(item)) {
-          initialExpandedDepth3.add(`${index}-${itemIndex}`);
-        }
-      });
-    });
-
-    setExpandedCategories(initialExpandedCategories);
-    setExpandedDepth3(initialExpandedDepth3);
-  }, [sidebar, currentUrl]);
-
-  const toggleCategory = (categoryIndex: number) => {
-    setExpandedCategories(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(categoryIndex)) {
-        newSet.delete(categoryIndex);
-      } else {
-        newSet.add(categoryIndex);
-      }
-      return newSet;
-    });
-  };
-
-  const toggleDepth3 = (key: string) => {
-    setExpandedDepth3(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(key)) {
-        newSet.delete(key);
-      } else {
-        newSet.add(key);
-      }
-      return newSet;
-    });
-  };
+    const pageInteractions = initializeContentsListPageInteractions();
+    setInteractions(pageInteractions);
+    
+    return () => {
+      pageInteractions.cleanup();
+    };
+  }, []);
 
   const handleLinkClick = (url: string) => {
     if (url && url !== '#') {
@@ -95,114 +46,83 @@ const ContentsListPage = ({
     handleLinkClick(url);
   };
 
+  const handleSortChange = (sortValue: string) => {
+    setActiveSortOption(sortValue);
+    console.log('Sort changed to:', sortValue);
+  };
+
+  const handlePageSizeChange = (size: number) => {
+    setCurrentPageSize(size);
+    console.log('Page size changed to:', size);
+  };
+
+
+  const renderListItem = (item: ListItem) => (
+    <li key={item.id} className="li">
+      <p className="info-top">
+        {item.meta.badge && (
+          <span className={`badge ${item.meta.badge.className || ''}`}>
+            {item.meta.badge.text}
+          </span>
+        )}
+        <span className="i-date">{item.meta.date}</span>
+      </p>
+      
+      <div className="info-body">
+        <a href={item.content.url} onClick={(e) => {
+          e.preventDefault();
+          handleLinkClick(item.content.url);
+        }}>
+          <p className="tit w-hide">
+            {item.content.title}
+          </p>
+          <div className="in">
+            <div className="text">
+              <p className="tit m-hide">
+                {item.content.title}
+              </p>
+              <p className="txt">
+                {item.content.description}
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      
+      <div className="info-btm">
+        <div>
+          {item.meta.url ? (
+            <a href={item.meta.url} target="_blank" rel="noopener noreferrer" className="url-link">
+              {item.meta.url}
+            </a>
+          ) : (
+            <span className="url-link">
+              {item.meta.views ? `조회 ${item.meta.views.toLocaleString()}` : ''}
+              {item.meta.views && item.meta.attachments ? ' | ' : ''}
+              {item.meta.attachments ? `첨부 ${item.meta.attachments}` : ''}
+            </span>
+          )}
+        </div>
+        <div>
+          <div className="btn-area">
+            <button 
+              type="button" 
+              className="btn sm btn-txt ico-go"
+              onClick={() => handleLinkClick(item.content.url)}
+            >
+              바로가기
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+  );
+
   return (
     <div id="container" className={className}>
       <div className="inner in-between">
-        {/* 좌측 사이드바 메뉴 */}
-        <nav className="left-menu">
-          <div className="left-in">
-            <h2 className="lnb-tit">{sidebar.title}</h2>
-            <ul className="acco-list lnb-list" data-action="accordion">
-              {sidebar.menu.map((category, categoryIndex) => {
-                const isExpanded = expandedCategories.has(categoryIndex);
-                const hasActive = categoryHasActive(category);
-
-                return (
-                  <li 
-                    key={categoryIndex} 
-                    className="li" 
-                    data-has-active={hasActive ? 'true' : 'false'}
-                  >
-                    <div className="acco-head">
-                      <h3 className="tit">{category.title}</h3>
-                      <button 
-                        type="button" 
-                        className="btn btn-ico acco-btn"
-                        aria-expanded={isExpanded}
-                        onClick={() => toggleCategory(categoryIndex)}
-                      >
-                        <span className="sr-only">{isExpanded ? '접기' : '펼침'}</span>
-                      </button>
-                    </div>
-                    <div 
-                      className="acco-body transitions-enabled" 
-                      style={{ display: isExpanded ? 'block' : 'none' }}
-                    >
-                      <div className="acco-in">
-                        <ul className="sub-ul">
-                          {category.items.map((item, itemIndex) => {
-                            const itemActive = isMenuActive(item.url);
-                            const hasActiveSubitem = itemHasActiveSubitem(item);
-                            const isActive = itemActive || hasActiveSubitem;
-                            const depth3Key = `${categoryIndex}-${itemIndex}`;
-                            const isDepth3Expanded = expandedDepth3.has(depth3Key);
-
-                            return (
-                              <li key={itemIndex}>
-                                {item.subitems ? (
-                                  <div className="depth3-container">
-                                    <button 
-                                      type="button" 
-                                      className={`subm has-depth3${isActive ? ' active' : ''}`}
-                                      aria-expanded={isDepth3Expanded}
-                                      onClick={() => toggleDepth3(depth3Key)}
-                                    >
-                                      <span className="subm-text">{item.title}</span>
-                                      <span className="btn-ico depth3-toggle"></span>
-                                    </button>
-                                    <ul 
-                                      className="depth3-ul"
-                                      style={{ 
-                                        display: isDepth3Expanded ? '' : 'none',
-                                        maxHeight: isDepth3Expanded ? '500px' : '0',
-                                        opacity: isDepth3Expanded ? '1' : '0'
-                                      }}
-                                    >
-                                      {item.subitems.map((subitem, subIndex) => {
-                                        const subitemActive = isMenuActive(subitem.url);
-                                        return (
-                                          <li key={subIndex}>
-                                            <a 
-                                              href={subitem.url}
-                                              className={`depth3-link${subitemActive ? ' active' : ''}`}
-                                              aria-current={subitemActive ? 'page' : undefined}
-                                              onClick={(e) => {
-                                                e.preventDefault();
-                                                handleLinkClick(subitem.url);
-                                              }}
-                                            >
-                                              {subitem.title}
-                                            </a>
-                                          </li>
-                                        );
-                                      })}
-                                    </ul>
-                                  </div>
-                                ) : (
-                                  <a 
-                                    href={item.url}
-                                    className={`subm${isActive ? ' active' : ''}`}
-                                    aria-current={isActive ? 'page' : undefined}
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      handleLinkClick(item.url);
-                                    }}
-                                  >
-                                    {item.title}
-                                  </a>
-                                )}
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </nav>
+        {/* 좌측 빈 공간 */}
+        <div className="left-space" style={{ width: '29.6rem' }}></div>
 
         {/* 메인 콘텐츠 영역 */}
         <div className="contents">
@@ -234,7 +154,7 @@ const ContentsListPage = ({
           <div className="page-title-wrap" data-type="responsive">
             <h2 className="h-tit">{page.title}</h2>
             {page.dropdown && (
-              <div className="krds-drop-wrap h-tit-drop">
+              <div className="drop-wrap h-tit-drop">
                 <button 
                   type="button" 
                   className="h-tit drop-btn"
@@ -267,12 +187,143 @@ const ContentsListPage = ({
             )}
           </div>
 
-          {/* 콘텐츠 본문 */}
+          {/* 페이지 설명 */}
+          {description && (
+            <div className="conts-desc">
+              <p>{description}</p>
+            </div>
+          )}
+
+          {/* 콘텐츠 리스트 */}
           <div className="conts-wrap">
-            <div className="conts-wrap">
-              <div className="conts-wrap">
-                <div dangerouslySetInnerHTML={{ __html: content }} />
-              </div>
+            <div className="list-wrap">
+              {/* 검색 정보 및 정렬 컨트롤 */}
+              {controls && (
+                <div className="search-list-top type2">
+                  {controls.searchInfo && (
+                    <div className="sch-info" role="region" aria-live="polite">
+                      총 <span className="keyword">{controls.searchInfo.totalResults.toLocaleString()}</span>개
+                    </div>
+                  )}
+                  
+                  <ul className="sch-sort">
+                    {/* 페이지 크기 선택 */}
+                    {controls.pageSizeOptions && (
+                      <li className="li1 m-hide">
+                        <strong className="sort-label">
+                          <label htmlFor="search_result_count">목록 표시 개수</label>
+                        </strong>
+                        <select 
+                          className="sort-select" 
+                          id="search_result_count"
+                          value={currentPageSize}
+                          onChange={(e) => handlePageSizeChange(Number(e.target.value))}
+                        >
+                          {controls.pageSizeOptions.map(size => (
+                            <option key={size} value={size}>{size}개</option>
+                          ))}
+                        </select>
+                      </li>
+                    )}
+                    
+                    {/* 정렬 옵션 */}
+                    <li className="li2">
+                      <strong className="sort-label">
+                        <label htmlFor="sort">정렬기준</label>
+                      </strong>
+                      <div className="w-sort-btn">
+                        {controls.sortOptions.map((option, index) => (
+                          <button 
+                            key={option.value}
+                            type="button" 
+                            className={activeSortOption === option.value ? 'active' : ''}
+                            onClick={() => handleSortChange(option.value)}
+                          >
+                            {option.label}
+                          </button>
+                        ))}
+                      </div>
+                      <div className="m-sort-btn">
+                        <button type="button" className="btn btn-txt ico-filter">
+                          <span className="span">필터</span>
+                          <span className="num">{controls.sortOptions.length}</span>
+                        </button>
+                        <select 
+                          className="sort-select" 
+                          id="sort"
+                          value={activeSortOption}
+                          onChange={(e) => handleSortChange(e.target.value)}
+                        >
+                          {controls.sortOptions.map(option => (
+                            <option key={option.value} value={option.value}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              )}
+              
+              {/* 리스트 아이템들 */}
+              <ul className="info-list total-search-list">
+                {items.map(renderListItem)}
+              </ul>
+              
+              {/* 페이지네이션 */}
+              {pagination && (
+                <div className="pagination-wrap">
+                  <nav className="pagination" aria-label="페이지 네비게이션">
+                    <a 
+                      href="#" 
+                      className={`page-btn prev ${!pagination.hasPrev ? 'disabled' : ''}`}
+                      aria-label="이전 페이지"
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      이전
+                    </a>
+                    <div className="page-numbers">
+                      {Array.from({ length: Math.min(5, pagination.totalPages) }, (_, i) => {
+                        const pageNum = Math.max(1, pagination.currentPage - 2) + i;
+                        if (pageNum > pagination.totalPages) return null;
+                        
+                        return (
+                          <a 
+                            key={pageNum}
+                            href="#" 
+                            className={`page-number ${pageNum === pagination.currentPage ? 'active' : ''}`}
+                            aria-current={pageNum === pagination.currentPage ? 'page' : undefined}
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            {pageNum}
+                          </a>
+                        );
+                      })}
+                      {pagination.totalPages > 5 && pagination.currentPage < pagination.totalPages - 2 && (
+                        <>
+                          <span className="page-dots">...</span>
+                          <a 
+                            href="#" 
+                            className="page-number"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            {pagination.totalPages}
+                          </a>
+                        </>
+                      )}
+                    </div>
+                    <a 
+                      href="#" 
+                      className={`page-btn next ${!pagination.hasNext ? 'disabled' : ''}`}
+                      aria-label="다음 페이지"
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      다음
+                    </a>
+                  </nav>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -45,3 +45,36 @@ body {
 .sb-bar * {
   font-family: "Nunito Sans", -apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
+
+/* Storybook 본문 영역 및 우측 사이드바 너비 조정 */
+.sbdocs.sbdocs-content,
+.css-x28zkw {
+  max-width: 1280px !important;
+}
+
+.sbdocs.sbdocs-toc--custom,
+.css-1wizkyk {
+  width: 15rem !important;
+}
+
+/* Docs 프리뷰 높이 제한 - 컴포넌트별 조정 */
+.docs-story {
+  max-height: none !important;
+}
+
+/* C. Components 카테고리의 컴포넌트들은 적절한 높이로 제한 */
+.docs-story[data-story-id*="components"] {
+  max-height: 400px !important;
+  overflow: hidden !important;
+}
+
+/* ContentsSidebar는 500px로 제한 */
+.docs-story[data-story-id*="contentssidebar"] {
+  max-height: 500px !important;
+  overflow: hidden !important;
+}
+
+/* Z. Page 카테고리는 전체 높이 유지 */
+.docs-story[data-story-id*="page"] {
+  max-height: none !important;
+}

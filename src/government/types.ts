@@ -420,3 +420,98 @@ export interface ContentsPageProps {
   currentUrl?: string;
   className?: string;
 }
+
+// Contents List Page Types
+export interface ListItemBadge {
+  text: string;
+  className?: string;
+}
+
+export interface ListItemMeta {
+  badge?: ListItemBadge;
+  date: string;
+  views?: number;
+  attachments?: number;
+  url?: string;
+}
+
+export interface ListItemContent {
+  title: string;
+  description: string;
+  url: string;
+}
+
+export interface ListItem {
+  id: string;
+  meta: ListItemMeta;
+  content: ListItemContent;
+}
+
+export interface SearchInfo {
+  totalResults: number;
+}
+
+export interface SortOption {
+  label: string;
+  value: string;
+  active?: boolean;
+}
+
+export interface ListControls {
+  searchInfo?: SearchInfo;
+  sortOptions: SortOption[];
+  pageSize?: number;
+  pageSizeOptions?: number[];
+}
+
+export interface PaginationInfo {
+  currentPage: number;
+  totalPages: number;
+  hasNext: boolean;
+  hasPrev: boolean;
+}
+
+export interface ContentsListPageProps {
+  breadcrumb: BreadcrumbItem[];
+  page: PageInfo;
+  description?: string;
+  controls?: ListControls;
+  items: ListItem[];
+  pagination?: PaginationInfo;
+  currentUrl?: string;
+  className?: string;
+}
+
+// Card Contents Types
+export interface CardContentsCard {
+  id: string;
+  title: string;
+  description: string;
+  url: string;
+  badge?: string;
+  buttonText: string;
+  imageClass: string;
+  imageUrl?: string;
+  imageAlt?: string;
+}
+
+export interface CardContentsProps {
+  title: string;
+  cards: CardContentsCard[];
+  moreLink?: string;
+  moreText?: string;
+  desktopLimit?: number;
+  className?: string;
+}
+
+// Foot Contents Types
+export interface FootContentsProps {
+  title: string;
+  description: string;
+  image?: string;
+  imageAlt?: string;
+  buttonText?: string;
+  buttonUrl?: string;
+  hasBackground?: boolean;
+  className?: string;
+}

@@ -8,6 +8,10 @@ export { default as ContentsCardCarousel } from './ContentsCardCarousel';
 export { default as ApplyPage } from './ApplyPage';
 export { default as ContentsPage } from './ContentsPage';
 export { default as ContentsListPage } from './ContentsListPage';
+export { default as ContentsSearchPage } from './ContentsSearchPage';
+export { default as ContentsSidebar } from './ContentsSidebar';
+export { default as CardContents } from './CardContents';
+export { default as FootContents } from './FootContents';
 
 // 프로바이더 및 유틸리티 exports
 export { 

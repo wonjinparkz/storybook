@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import ContentsCardCarousel from './ContentsCardCarousel';
 
 const meta: Meta<typeof ContentsCardCarousel> = {
-  title: 'Government/C. Carousel/Contents Card Carousel',
+  title: 'Government/D. Carousel/Contents Card Carousel',
   component: ContentsCardCarousel,
   parameters: {
     layout: 'fullscreen',

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import ContentsListPage from './ContentsListPage';
-import { ContentsPageProps } from './types';
+import { ContentsListPageProps, ListItem } from './types';
 
 const meta: Meta<typeof ContentsListPage> = {
-  title: 'Government/D. Page/ContentsListPage',
+  title: 'Government/Z. Page/ContentsListPage',
   component: ContentsListPage,
   parameters: {
     layout: 'fullscreen',
@@ -14,19 +14,25 @@ const meta: Meta<typeof ContentsListPage> = {
 
 정부 웹사이트의 콘텐츠 리스트 페이지 컴포넌트입니다. 다음과 같은 기능을 제공합니다:
 
-- **좌측 사이드바**: 계층형 네비게이션 메뉴 (최대 3depth)
+- **좌측 빈 공간**: 사이드바 영역은 빈 공간으로 처리
 - **브레드크럼**: 현재 위치 표시
 - **페이지 타이틀**: 드롭다운 메뉴 지원
-- **콘텐츠 영역**: HTML 콘텐츠 렌더링 (리스트 형태 콘텐츠에 최적화)
+- **검색 및 정렬**: 검색 정보, 정렬 옵션, 페이지 크기 설정
+- **콘텐츠 리스트**: 구조화된 데이터 기반 리스트 아이템 렌더링
+- **페이지네이션**: 페이지 네비게이션 지원
 - **반응형 디자인**: 모바일/태블릿 지원
 
 #### 주요 특징
-- PHP 참조 파일 구조 완전 재현
-- 아코디언 방식의 사이드바 메뉴
-- 현재 페이지 기반 자동 메뉴 확장
+- props 기반의 유연한 데이터 구조
+- 정렬 및 페이지 크기 변경 상호작용
 - 접근성 준수 (ARIA 속성)
 - 애니메이션 효과
-- 드롭다운 메뉴 지원
+- TypeScript 타입 안전성
+
+#### 데이터 구조
+리스트 아이템은 다음과 같은 구조를 가집니다:
+- **meta**: 배지, 날짜, 조회수, 첨부파일 수 등
+- **content**: 제목, 설명, URL 등
         `
       }
     }
@@ -47,281 +53,206 @@ const meta: Meta<typeof ContentsListPage> = {
 export default meta;
 type Story = StoryObj<typeof ContentsListPage>;
 
-// 기본 콘텐츠 리스트 페이지 데이터
-const baseContentsListPageData: ContentsPageProps = {
-  sidebar: {
-    title: '정부 발표자료',
-    menu: [
-      {
-        title: '정책뉴스',
-        expanded: true,
-        items: [
-          {
-            title: '정부브리핑',
-            url: '/news/briefing'
-          },
-          {
-            title: '정책발표',
-            url: '/news/policy',
-            subitems: [
-              { title: '경제정책', url: '/news/policy/economy' },
-              { title: '사회정책', url: '/news/policy/society' },
-              { title: '외교안보', url: '/news/policy/foreign' },
-              { title: '행정개혁', url: '/news/policy/reform' }
-            ]
-          },
-          {
-            title: '입법예고',
-            url: '/news/legislation'
-          }
-        ]
-      },
-      {
-        title: '보도자료',
-        expanded: false,
-        items: [
-          {
-            title: '부처별 보도자료',
-            url: '/press/department',
-            subitems: [
-              { title: '기획재정부', url: '/press/department/moef' },
-              { title: '교육부', url: '/press/department/moe' },
-              { title: '과학기술정보통신부', url: '/press/department/msit' },
-              { title: '외교부', url: '/press/department/mofa' },
-              { title: '통일부', url: '/press/department/mou' }
-            ]
-          },
-          {
-            title: '합동브리핑',
-            url: '/press/joint'
-          },
-          {
-            title: '기자회견',
-            url: '/press/conference'
-          }
-        ]
-      },
-      {
-        title: '정책자료',
-        expanded: false,
-        items: [
-          {
-            title: '정책연구',
-            url: '/policy/research'
-          },
-          {
-            title: '백서·연감',
-            url: '/policy/whitepaper',
-            subitems: [
-              { title: '정부업무보고서', url: '/policy/whitepaper/government-report' },
-              { title: '부처별 백서', url: '/policy/whitepaper/department' },
-              { title: '통계연감', url: '/policy/whitepaper/statistics' }
-            ]
-          },
-          {
-            title: '법령정보',
-            url: '/policy/law'
-          }
-        ]
-      }
-    ]
-  },
-  breadcrumb: [
-    { text: '홈', url: '/' },
-    { text: '정부 발표자료', url: '/news' },
-    { text: '보도자료', url: '/press' },
-    { text: '부처별 보도자료', url: '' }
-  ],
-  page: {
-    title: '부처별 보도자료',
-    dropdown: {
-      current: '2024년',
-      items: [
-        { text: '2024년', url: '/press/department?year=2024' },
-        { text: '2023년', url: '/press/department?year=2023' },
-        { text: '2022년', url: '/press/department?year=2022' },
-        { text: '2021년', url: '/press/department?year=2021' }
-      ]
+// 샘플 리스트 아이템 데이터
+const samplePressReleaseItems: ListItem[] = [
+  {
+    id: 'press-001',
+    meta: {
+      badge: { text: '기획재정부' },
+      date: '2024.08.17',
+      views: 1234,
+      attachments: 3
+    },
+    content: {
+      title: '2024년 하반기 경제정책방향 발표',
+      description: '정부는 하반기 경제정책 방향을 발표하며, 민생경제 안정과 구조개혁을 통한 역동경제 구현에 중점을 둔다고 밝혔습니다. 주요 내용으로는 물가안정, 고용창출, 산업혁신 등이 포함되어 있습니다.',
+      url: '/press/detail/12345'
     }
   },
-  content: `
-    <div class="conts-desc">
-      <p>각 부처에서 발표하는 주요 정책 및 사업 관련 보도자료를 제공합니다. 최신 정부 정책과 주요 이슈에 대한 공식 입장을 확인하실 수 있습니다.</p>
-    </div>
-    
-    <div class="conts-wrap">
-      <h3 class="sec-tit">최신 보도자료</h3>
-      
-      <div class="board-wrap">
-        <div class="board-head">
-          <div class="total-info">
-            <span class="total">전체 <strong>2,847</strong>건</span>
-            <span class="page-info">1/285페이지</span>
-          </div>
-          <div class="sort-wrap">
-            <select class="sort-select">
-              <option value="date">등록일순</option>
-              <option value="view">조회순</option>
-              <option value="title">제목순</option>
-            </select>
-          </div>
-        </div>
-        
-        <div class="board-list">
-          <ul class="board-ul">
-            <li class="board-item">
-              <div class="item-header">
-                <span class="item-category">기획재정부</span>
-                <span class="item-date">2024.08.17</span>
-              </div>
-              <h4 class="item-title">
-                <a href="/press/detail/12345">2024년 하반기 경제정책방향 발표</a>
-              </h4>
-              <p class="item-summary">
-                정부는 하반기 경제정책 방향을 발표하며, 민생경제 안정과 구조개혁을 통한 역동경제 구현에 중점을 둔다고 밝혔습니다.
-              </p>
-              <div class="item-meta">
-                <span class="item-views">조회 1,234</span>
-                <span class="item-attachments">첨부 3</span>
-              </div>
-            </li>
-            
-            <li class="board-item">
-              <div class="item-header">
-                <span class="item-category">교육부</span>
-                <span class="item-date">2024.08.16</span>
-              </div>
-              <h4 class="item-title">
-                <a href="/press/detail/12344">2025학년도 대입제도 개선방안 확정</a>
-              </h4>
-              <p class="item-summary">
-                교육부는 학생과 학부모의 대입 부담을 줄이고 공정성을 강화하기 위한 2025학년도 대입제도 개선방안을 확정했다고 발표했습니다.
-              </p>
-              <div class="item-meta">
-                <span class="item-views">조회 987</span>
-                <span class="item-attachments">첨부 2</span>
-              </div>
-            </li>
-            
-            <li class="board-item">
-              <div class="item-header">
-                <span class="item-category">과학기술정보통신부</span>
-                <span class="item-date">2024.08.15</span>
-              </div>
-              <h4 class="item-title">
-                <a href="/press/detail/12343">K-디지털 플랫폼 2.0 구축 계획 발표</a>
-              </h4>
-              <p class="item-summary">
-                과기정통부는 디지털 대전환 시대에 대응하여 K-디지털 플랫폼 2.0 구축을 통해 국가 디지털 경쟁력을 높이겠다고 발표했습니다.
-              </p>
-              <div class="item-meta">
-                <span class="item-views">조회 756</span>
-                <span class="item-attachments">첨부 1</span>
-              </div>
-            </li>
-            
-            <li class="board-item">
-              <div class="item-header">
-                <span class="item-category">외교부</span>
-                <span class="item-date">2024.08.14</span>
-              </div>
-              <h4 class="item-title">
-                <a href="/press/detail/12342">한-아세안 특별정상회의 개최 결과</a>
-              </h4>
-              <p class="item-summary">
-                외교부는 한-아세안 특별정상회의가 성공적으로 개최되어 양측 간 전략적 동반자 관계를 더욱 강화하는 계기가 되었다고 발표했습니다.
-              </p>
-              <div class="item-meta">
-                <span class="item-views">조회 654</span>
-                <span class="item-attachments">첨부 5</span>
-              </div>
-            </li>
-            
-            <li class="board-item">
-              <div class="item-header">
-                <span class="item-category">통일부</span>
-                <span class="item-date">2024.08.13</span>
-              </div>
-              <h4 class="item-title">
-                <a href="/press/detail/12341">북한이탈주민 정착지원 종합계획 발표</a>
-              </h4>
-              <p class="item-summary">
-                통일부는 북한이탈주민의 성공적 정착을 위한 종합적인 지원방안을 마련하여 사회통합에 기여하겠다고 밝혔습니다.
-              </p>
-              <div class="item-meta">
-                <span class="item-views">조회 432</span>
-                <span class="item-attachments">첨부 2</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="pagination-wrap">
-          <nav class="pagination" aria-label="페이지 네비게이션">
-            <a href="#" class="page-btn prev" aria-label="이전 페이지">이전</a>
-            <div class="page-numbers">
-              <a href="#" class="page-number active" aria-current="page">1</a>
-              <a href="#" class="page-number">2</a>
-              <a href="#" class="page-number">3</a>
-              <a href="#" class="page-number">4</a>
-              <a href="#" class="page-number">5</a>
-              <span class="page-dots">...</span>
-              <a href="#" class="page-number">285</a>
-            </div>
-            <a href="#" class="page-btn next" aria-label="다음 페이지">다음</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-    
-    <div class="conts-wrap">
-      <h3 class="sec-tit">검색 옵션</h3>
-      
-      <div class="search-wrap">
-        <div class="search-form">
-          <div class="search-fields">
-            <div class="field-group">
-              <label for="search-category">부처선택</label>
-              <select id="search-category" class="form-select">
-                <option value="">전체부처</option>
-                <option value="moef">기획재정부</option>
-                <option value="moe">교육부</option>
-                <option value="msit">과학기술정보통신부</option>
-                <option value="mofa">외교부</option>
-                <option value="mou">통일부</option>
-              </select>
-            </div>
-            
-            <div class="field-group">
-              <label for="search-period">기간선택</label>
-              <select id="search-period" class="form-select">
-                <option value="">전체기간</option>
-                <option value="1week">최근 1주일</option>
-                <option value="1month">최근 1개월</option>
-                <option value="3month">최근 3개월</option>
-                <option value="6month">최근 6개월</option>
-                <option value="1year">최근 1년</option>
-              </select>
-            </div>
-            
-            <div class="field-group search-input-group">
-              <label for="search-keyword">검색어</label>
-              <div class="input-with-button">
-                <input type="text" id="search-keyword" class="form-input" placeholder="검색어를 입력하세요">
-                <button type="button" class="btn primary">검색</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `,
-  currentUrl: '/press/department'
-};
+  {
+    id: 'press-002',
+    meta: {
+      badge: { text: '교육부' },
+      date: '2024.08.16',
+      views: 987,
+      attachments: 2
+    },
+    content: {
+      title: '2025학년도 대입제도 개선방안 확정',
+      description: '교육부는 학생과 학부모의 대입 부담을 줄이고 공정성을 강화하기 위한 2025학년도 대입제도 개선방안을 확정했다고 발표했습니다. 전형 간소화와 평가의 투명성 제고가 주요 골자입니다.',
+      url: '/press/detail/12344'
+    }
+  },
+  {
+    id: 'press-003',
+    meta: {
+      badge: { text: '과학기술정보통신부' },
+      date: '2024.08.15',
+      views: 756,
+      attachments: 1
+    },
+    content: {
+      title: 'K-디지털 플랫폼 2.0 구축 계획 발표',
+      description: '과기정통부는 디지털 대전환 시대에 대응하여 K-디지털 플랫폼 2.0 구축을 통해 국가 디지털 경쟁력을 높이겠다고 발표했습니다. AI, 빅데이터, 클라우드 등 핵심 기술 육성에 집중합니다.',
+      url: '/press/detail/12343'
+    }
+  },
+  {
+    id: 'press-004',
+    meta: {
+      badge: { text: '외교부' },
+      date: '2024.08.14',
+      views: 654,
+      attachments: 5
+    },
+    content: {
+      title: '한-아세안 특별정상회의 개최 결과',
+      description: '외교부는 한-아세안 특별정상회의가 성공적으로 개최되어 양측 간 전략적 동반자 관계를 더욱 강화하는 계기가 되었다고 발표했습니다. 경제협력, 기후변화 대응, 디지털 전환 등에서 협력을 확대하기로 했습니다.',
+      url: '/press/detail/12342'
+    }
+  },
+  {
+    id: 'press-005',
+    meta: {
+      badge: { text: '통일부' },
+      date: '2024.08.13',
+      views: 432,
+      attachments: 2
+    },
+    content: {
+      title: '북한이탈주민 정착지원 종합계획 발표',
+      description: '통일부는 북한이탈주민의 성공적 정착을 위한 종합적인 지원방안을 마련하여 사회통합에 기여하겠다고 밝혔습니다. 주거, 교육, 취업 등 전 분야에 걸친 정착지원 서비스를 제공합니다.',
+      url: '/press/detail/12341'
+    }
+  }
+];
 
-// 스토리 정의
+const samplePolicyItems: ListItem[] = [
+  {
+    id: 'policy-001',
+    meta: {
+      badge: { text: '경제정책' },
+      date: '2024.08.17',
+      url: 'https://moef.go.kr'
+    },
+    content: {
+      title: '2024년 하반기 경제정책방향 발표',
+      description: '민생경제 안정과 구조개혁을 통한 역동경제 구현에 중점을 둔 하반기 경제정책 방향을 발표했습니다. 물가안정, 고용창출, 산업혁신 등이 주요 내용입니다.',
+      url: '/news/policy/economy/2024-h2'
+    }
+  },
+  {
+    id: 'policy-002',
+    meta: {
+      badge: { text: '중소기업' },
+      date: '2024.08.10',
+      url: 'https://mss.go.kr'
+    },
+    content: {
+      title: '중소기업 지원방안 확대 발표',
+      description: '중소기업의 경쟁력 강화와 지속가능한 성장을 위한 종합적인 지원방안을 발표했습니다. 금융지원, 기술개발, 판로개척 등 전방위적 지원을 확대합니다.',
+      url: '/news/policy/economy/sme-support'
+    }
+  },
+  {
+    id: 'policy-003',
+    meta: {
+      badge: { text: '디지털경제' },
+      date: '2024.08.05',
+      url: 'https://msit.go.kr'
+    },
+    content: {
+      title: '디지털 경제 활성화 종합계획 발표',
+      description: '디지털 전환 가속화와 혁신성장 동력 확충을 위한 종합계획을 발표했습니다. AI, 빅데이터, IoT 등 핵심 기술 생태계 조성에 집중합니다.',
+      url: '/news/policy/economy/digital-plan'
+    }
+  }
+];
+
+const sampleNoticeItems: ListItem[] = [
+  {
+    id: 'notice-001',
+    meta: {
+      badge: { text: '중요', className: 'important' },
+      date: '2024.08.17',
+      views: 2345
+    },
+    content: {
+      title: '개인정보처리방침 개정 안내',
+      description: '개인정보 보호 강화를 위해 개인정보처리방침이 개정됩니다. 주요 변경사항을 확인하시기 바랍니다.',
+      url: '/notice/privacy-policy'
+    }
+  },
+  {
+    id: 'notice-002',
+    meta: {
+      badge: { text: '시스템' },
+      date: '2024.08.15',
+      views: 1876
+    },
+    content: {
+      title: '정기점검 일정 안내',
+      description: '시스템 안정성 향상을 위한 정기점검이 예정되어 있습니다. 서비스 이용에 참고하시기 바랍니다.',
+      url: '/notice/maintenance'
+    }
+  },
+  {
+    id: 'notice-003',
+    meta: {
+      badge: { text: '서비스' },
+      date: '2024.08.10',
+      views: 1543
+    },
+    content: {
+      title: '새로운 기능 업데이트 안내',
+      description: '사용자 편의성 향상을 위한 새로운 기능이 추가되었습니다. 업데이트된 기능을 확인해보세요.',
+      url: '/notice/update'
+    }
+  }
+];
+
+// 기본 스토리
 export const Default: Story = {
-  args: baseContentsListPageData,
+  args: {
+    breadcrumb: [
+      { text: '홈', url: '/' },
+      { text: '정부 발표자료', url: '/news' },
+      { text: '보도자료', url: '/press' },
+      { text: '부처별 보도자료', url: '' }
+    ],
+    page: {
+      title: '부처별 보도자료',
+      dropdown: {
+        current: '2024년',
+        items: [
+          { text: '2024년', url: '/press/department?year=2024' },
+          { text: '2023년', url: '/press/department?year=2023' },
+          { text: '2022년', url: '/press/department?year=2022' },
+          { text: '2021년', url: '/press/department?year=2021' }
+        ]
+      }
+    },
+    controls: {
+      searchInfo: {
+        totalResults: 2847
+      },
+      sortOptions: [
+        { label: '관련도순', value: 'relevance', active: true },
+        { label: '최신순', value: 'date' },
+        { label: '인기순', value: 'popular' }
+      ],
+      pageSize: 10,
+      pageSizeOptions: [10, 20, 50]
+    },
+    items: samplePressReleaseItems,
+    pagination: {
+      currentPage: 1,
+      totalPages: 285,
+      hasNext: true,
+      hasPrev: false
+    },
+    currentUrl: '/press/department'
+  },
   parameters: {
     docs: {
       description: {
@@ -331,38 +262,9 @@ export const Default: Story = {
   }
 };
 
+// 정책뉴스 페이지
 export const PolicyNews: Story = {
   args: {
-    ...baseContentsListPageData,
-    sidebar: {
-      title: '정부 발표자료',
-      menu: [
-        {
-          title: '정책뉴스',
-          expanded: true,
-          items: [
-            {
-              title: '정부브리핑',
-              url: '/news/briefing'
-            },
-            {
-              title: '정책발표',
-              url: '/news/policy',
-              subitems: [
-                { title: '경제정책', url: '/news/policy/economy' },
-                { title: '사회정책', url: '/news/policy/society' },
-                { title: '외교안보', url: '/news/policy/foreign' },
-                { title: '행정개혁', url: '/news/policy/reform' }
-              ]
-            },
-            {
-              title: '입법예고',
-              url: '/news/legislation'
-            }
-          ]
-        }
-      ]
-    },
     breadcrumb: [
       { text: '홈', url: '/' },
       { text: '정부 발표자료', url: '/news' },
@@ -380,62 +282,26 @@ export const PolicyNews: Story = {
         ]
       }
     },
-    content: `
-      <div class="conts-desc">
-        <p>정부의 주요 경제정책 발표 및 브리핑 자료를 제공합니다. 경제동향, 정책방향, 주요 이슈에 대한 정부의 공식 입장을 확인하실 수 있습니다.</p>
-      </div>
-      
-      <div class="conts-wrap">
-        <h3 class="sec-tit">이번 달 주요 발표</h3>
-        
-        <div class="highlight-list">
-          <ul class="info-list decimal">
-            <li><strong>8월 17일</strong>: 2024년 하반기 경제정책방향 발표</li>
-            <li><strong>8월 10일</strong>: 중소기업 지원방안 확대 발표</li>
-            <li><strong>8월 5일</strong>: 디지털 경제 활성화 종합계획 발표</li>
-            <li><strong>8월 1일</strong>: 8월 경제동향 브리핑</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="conts-wrap">
-        <h3 class="sec-tit">관련 부처</h3>
-        
-        <div class="tbl-wrap">
-          <table class="tbl col data">
-            <caption>경제정책 관련 부처 및 담당업무</caption>
-            <colgroup>
-              <col style="width: 30%;">
-              <col style="width: 70%;">
-            </colgroup>
-            <thead>
-              <tr>
-                <th scope="col">부처명</th>
-                <th scope="col">주요 담당업무</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>기획재정부</td>
-                <td>거시경제정책, 재정정책, 세제개편, 금융정책</td>
-              </tr>
-              <tr>
-                <td>산업통상자원부</td>
-                <td>산업정책, 통상정책, 에너지정책, 중소기업정책</td>
-              </tr>
-              <tr>
-                <td>중소벤처기업부</td>
-                <td>중소기업 육성, 창업지원, 벤처기업 지원</td>
-              </tr>
-              <tr>
-                <td>국토교통부</td>
-                <td>부동산정책, 건설산업정책, 교통정책</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    `,
+    description: '정부의 주요 경제정책 발표 및 브리핑 자료를 제공합니다. 경제동향, 정책방향, 주요 이슈에 대한 정부의 공식 입장을 확인하실 수 있습니다.',
+    controls: {
+      searchInfo: {
+        totalResults: 147
+      },
+      sortOptions: [
+        { label: '관련도순', value: 'relevance', active: true },
+        { label: '최신순', value: 'date' },
+        { label: '인기순', value: 'popular' }
+      ],
+      pageSize: 10,
+      pageSizeOptions: [10, 20, 50]
+    },
+    items: samplePolicyItems,
+    pagination: {
+      currentPage: 1,
+      totalPages: 15,
+      hasNext: true,
+      hasPrev: false
+    },
     currentUrl: '/news/policy/economy'
   },
   parameters: {
@@ -447,30 +313,9 @@ export const PolicyNews: Story = {
   }
 };
 
-export const SimpleListPage: Story = {
+// 단순 리스트 페이지
+export const SimpleNotice: Story = {
   args: {
-    sidebar: {
-      title: '공지사항',
-      menu: [
-        {
-          title: '일반공지',
-          expanded: true,
-          items: [
-            { title: '전체공지', url: '/notice/all' },
-            { title: '시스템공지', url: '/notice/system' },
-            { title: '서비스공지', url: '/notice/service' }
-          ]
-        },
-        {
-          title: '긴급공지',
-          expanded: false,
-          items: [
-            { title: '긴급알림', url: '/notice/urgent' },
-            { title: '점검공지', url: '/notice/maintenance' }
-          ]
-        }
-      ]
-    },
     breadcrumb: [
       { text: '홈', url: '/' },
       { text: '공지사항', url: '/notice' },
@@ -479,25 +324,26 @@ export const SimpleListPage: Story = {
     page: {
       title: '전체 공지사항'
     },
-    content: `
-      <div class="conts-desc">
-        <p>사이트 이용과 관련된 공지사항을 안내해드립니다.</p>
-      </div>
-      
-      <div class="conts-wrap">
-        <h3 class="sec-tit">최신 공지사항</h3>
-        
-        <div class="simple-list">
-          <ul class="info-list decimal">
-            <li><strong>[중요]</strong> 개인정보처리방침 개정 안내 (2024.08.17)</li>
-            <li><strong>[시스템]</strong> 정기점검 일정 안내 (2024.08.15)</li>
-            <li><strong>[서비스]</strong> 새로운 기능 업데이트 안내 (2024.08.10)</li>
-            <li>사이트 이용약관 변경 안내 (2024.08.05)</li>
-            <li>모바일 앱 버전 업데이트 안내 (2024.08.01)</li>
-          </ul>
-        </div>
-      </div>
-    `,
+    description: '사이트 이용과 관련된 공지사항을 안내해드립니다.',
+    controls: {
+      searchInfo: {
+        totalResults: 156
+      },
+      sortOptions: [
+        { label: '최신순', value: 'date', active: true },
+        { label: '제목순', value: 'title' },
+        { label: '조회순', value: 'views' }
+      ],
+      pageSize: 10,
+      pageSizeOptions: [10, 20, 50]
+    },
+    items: sampleNoticeItems,
+    pagination: {
+      currentPage: 1,
+      totalPages: 16,
+      hasNext: true,
+      hasPrev: false
+    },
     currentUrl: '/notice/all'
   },
   parameters: {
@@ -509,27 +355,31 @@ export const SimpleListPage: Story = {
   }
 };
 
-export const WithActiveSubmenu: Story = {
-  args: {
-    ...baseContentsListPageData,
-    currentUrl: '/press/department/moef'
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: '서브메뉴가 활성화된 상태의 콘텐츠 리스트 페이지입니다. "부처별 보도자료 > 기획재정부" 메뉴가 활성화되어 있습니다.'
-      }
-    }
-  }
-};
-
+// 드롭다운 없는 페이지
 export const NoDropdown: Story = {
   args: {
-    ...baseContentsListPageData,
+    breadcrumb: [
+      { text: '홈', url: '/' },
+      { text: '정부 발표자료', url: '/news' },
+      { text: '보도자료', url: '/press' },
+      { text: '부처별 보도자료', url: '' }
+    ],
     page: {
       title: '부처별 보도자료'
       // dropdown 제거
-    }
+    },
+    controls: {
+      searchInfo: {
+        totalResults: 2847
+      },
+      sortOptions: [
+        { label: '관련도순', value: 'relevance', active: true },
+        { label: '최신순', value: 'date' },
+        { label: '인기순', value: 'popular' }
+      ]
+    },
+    items: samplePressReleaseItems.slice(0, 3),
+    currentUrl: '/press/department'
   },
   parameters: {
     docs: {
@@ -540,8 +390,34 @@ export const NoDropdown: Story = {
   }
 };
 
+// 페이지네이션 없는 페이지
+export const NoPagination: Story = {
+  args: {
+    breadcrumb: [
+      { text: '홈', url: '/' },
+      { text: '공지사항', url: '/notice' },
+      { text: '긴급공지', url: '' }
+    ],
+    page: {
+      title: '긴급 공지사항'
+    },
+    items: sampleNoticeItems.slice(0, 2),
+    currentUrl: '/notice/urgent'
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: '컨트롤 및 페이지네이션이 없는 단순한 리스트 페이지입니다.'
+      }
+    }
+  }
+};
+
+// 모바일 반응형
 export const MobileResponsive: Story = {
-  args: baseContentsListPageData,
+  args: {
+    ...Default.args
+  },
   parameters: {
     viewport: {
       defaultViewport: 'mobile1'

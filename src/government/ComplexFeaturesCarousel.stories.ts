@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import ComplexFeaturesCarousel from './ComplexFeaturesCarousel';
 
 const meta: Meta<typeof ComplexFeaturesCarousel> = {
-  title: 'Government/C. Carousel/Complex Features Carousel',
+  title: 'Government/D. Carousel/Complex Features Carousel',
   component: ComplexFeaturesCarousel,
   parameters: {
     layout: 'fullscreen',

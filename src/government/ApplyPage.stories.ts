@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import ApplyPage from './ApplyPage';
 
 const meta: Meta<typeof ApplyPage> = {
-  title: 'Government/D. Page/Apply Page',
+  title: 'Government/Z. Page/Apply Page',
   component: ApplyPage,
   parameters: {
     layout: 'fullscreen',

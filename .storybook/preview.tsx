@@ -9,8 +9,8 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    layout: 'padded',
     docs: {
-      toc: true,
     },
     options: {
       storySort: {
@@ -25,9 +25,15 @@ const preview: Preview = {
       const isGovernmentStory = context.title?.includes('Government/');
       
       if (isGovernmentStory) {
+        // Z. Page 카테고리는 전체 페이지이므로 전체 높이 적용
+        const isPageComponent = context.title?.includes('Z. Page');
+        const wrapperStyle = isPageComponent 
+          ? { minHeight: '100vh' }
+          : { minHeight: 'auto' };
+        
         return (
           <GovernmentProvider autoLoad={true}>
-            <div style={{ minHeight: '100vh' }}>
+            <div style={wrapperStyle}>
               <Story />
             </div>
           </GovernmentProvider>

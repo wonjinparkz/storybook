@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import IconFeaturesCarousel from './IconFeaturesCarousel';
 
 const meta: Meta<typeof IconFeaturesCarousel> = {
-  title: 'Government/C. Carousel/Icon Features Carousel',
+  title: 'Government/D. Carousel/Icon Features Carousel',
   component: IconFeaturesCarousel,
   parameters: {
     layout: 'fullscreen',
