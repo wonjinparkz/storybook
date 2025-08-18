@@ -129,7 +129,7 @@ const ContentsCardCarousel = ({
           {moreLink && (
             <a 
               href={moreLink} 
-              className="btn sm btn-txt ico-plus"
+              className="btn sm btn-txt ico-plus contents-btn-tl"
               onClick={(e) => {
                 e.preventDefault();
                 handleMoreClick(moreLink);
@@ -165,7 +165,7 @@ const ContentsCardCarousel = ({
                             <p className="c-txt">{card.description}</p>
                           </div>
                           <p className="c-btn">
-                            <span className="btn sm btn-txt ico-more">
+                            <span className="btn sm btn-txt ico-more contents-btn-tl">
                               {card.buttonText || '자세히보기'}
                             </span>
                           </p>

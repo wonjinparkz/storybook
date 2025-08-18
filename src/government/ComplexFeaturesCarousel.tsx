@@ -129,7 +129,7 @@ const ComplexFeaturesCarousel = ({
             />
             <a 
               href={intro.buttonUrl} 
-              className="btn sm btn-txt ico-more"
+              className="btn sm btn-txt ico-more contents-btn-tl"
               onClick={(e) => {
                 e.preventDefault();
                 handleIntroClick(intro.buttonUrl);
@@ -173,7 +173,7 @@ const ComplexFeaturesCarousel = ({
                               <p className="c-txt">{card.description}</p>
                             </div>
                             <p className="c-btn">
-                              <span className="btn sm btn-txt ico-more">자세히보기</span>
+                              <span className="btn sm btn-txt ico-more contents-btn-tl">자세히보기</span>
                             </p>
                           </div>
                         </div>
