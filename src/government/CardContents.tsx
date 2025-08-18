@@ -51,7 +51,7 @@ const CardContents = ({
               <p className="c-txt">{card.description}</p>
             </div>
             <p className="c-btn">
-              <span className="btn sm btn-txt ico-more">{card.buttonText}</span>
+              <span className="btn sm btn-txt ico-more contents-btn-tl">{card.buttonText}</span>
             </p>
           </div>
         </div>
@@ -67,7 +67,7 @@ const CardContents = ({
           {moreLink && (
             <a 
               href={moreLink} 
-              className="btn sm btn-txt ico-plus"
+              className="btn sm btn-txt ico-plus contents-btn-tl"
               onClick={(e) => {
                 e.preventDefault();
                 handleLinkClick(moreLink);
