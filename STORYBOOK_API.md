@@ -3,6 +3,12 @@
 ## 🌐 Live Demo
 **URL**: https://wonjinparkz.github.io/storybook/
 
+## 📦 Standalone Components
+컴포넌트를 독립적으로 복제해서 사용할 수 있습니다:
+- **StepProcessPage**: [`packages/StepProcessPage/`](./packages/StepProcessPage/) - 완전히 독립적인 버전
+- **포함 파일**: 컴포넌트, 타입, 스타일, 사용 가이드 포함
+- **의존성**: React만 필요 (Provider 불필요)
+
 ## 📚 Component Library
 
 ### Header & Footer
