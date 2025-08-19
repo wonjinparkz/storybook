@@ -2,7 +2,94 @@
 
 AI 서버들이 바로 사용할 수 있는 직접 링크들입니다.
 
-## 🚀 컴포넌트 직접 복사 (1분 설정)
+## 🎯 통합 번들 (추천) - 모든 컴포넌트 한 번에
+
+### 완전한 정부 디자인 시스템 (4파일 복사)
+```bash
+# 1. 모든 컴포넌트 + 타입 (단일 파일)
+curl -o government-components.tsx https://raw.githubusercontent.com/wonjinparkz/storybook/main/dist/government-components.tsx
+
+# 2. 모든 스타일 (단일 파일)  
+curl -o government-components.css https://raw.githubusercontent.com/wonjinparkz/storybook/main/dist/government-components.css
+
+# 3. 인터랙션 스크립트 (개발용)
+curl -o government-scripts.js https://raw.githubusercontent.com/wonjinparkz/storybook/main/dist/government-scripts.js
+
+# 4. 인터랙션 스크립트 (운영용 - 압축)
+curl -o government-scripts.min.js https://raw.githubusercontent.com/wonjinparkz/storybook/main/dist/government-scripts.min.js
+```
+
+### React에서 사용
+```tsx
+import { 
+  GovernmentHeader, 
+  GovernmentFooter, 
+  StepProcessPage,
+  FullBannerCarousel,
+  IconFeaturesCarousel, 
+  ComplexFeaturesCarousel,
+  ContentsCardCarousel,
+  FootContents,
+  TabContents,
+  CardContents
+} from './government-components';
+import './government-components.css';
+
+// 바로 사용 가능!
+<StepProcessPage type="single" title="정부 서비스" breadcrumb={[]} />
+<GovernmentHeader etcMenus={{...}} siteInfo={{...}} isLoggedIn={false} menuStructure={[]} />
+<FullBannerCarousel slides={[]} swiperId="banner1" />
+```
+
+### HTML에서 사용 (스크립트 포함)
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="government-components.css">
+</head>
+<body>
+  <!-- 컴포넌트 HTML -->
+  <div id="app"></div>
+  
+  <!-- 인터랙션 스크립트 -->
+  <script src="government-scripts.min.js"></script>
+  <script>
+    // 자동 초기화됨 - 추가 설정 불필요
+    console.log('정부 디자인 시스템 준비 완료');
+  </script>
+</body>
+</html>
+```
+
+**포함된 컴포넌트**: 
+- `ApplyPage`
+- `CardContents`
+- `ComplexFeaturesCarousel`
+- `ContentsCardCarousel`
+- `ContentsListPage`
+- `ContentsPage`
+- `ContentsSearchPage`
+- `ContentsSidebar`
+- `FootContents`
+- `FullBannerCarousel`
+- `GovernmentFooter`
+- `GovernmentHeader`
+- `IconFeaturesCarousel`
+- `StepProcessPage`
+- `TabContents`
+ - 정부사이트 헤더 
+- `GovernmentFooter` - 정부사이트 푸터
+- `StepProcessPage` - 단계별 신청 폼 (14개 필드 타입)
+- `FullBannerCarousel` - 메인 배너 슬라이더
+- `IconFeaturesCarousel` - 아이콘 메뉴 슬라이더  
+- `ComplexFeaturesCarousel` - 고급 카드 슬라이더
+- `ContentsCardCarousel` - 콘텐츠 카드 슬라이더
+- `FootContents` - 하단 콘텐츠 섹션
+- `TabContents` - 탭형 콘텐츠
+- `CardContents` - 카드 그리드 레이아웃
+
+## 🚀 개별 컴포넌트 복사 (1분 설정)
 
 ### StepProcessPage 컴포넌트
 ```bash

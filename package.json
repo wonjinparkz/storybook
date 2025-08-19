@@ -24,7 +24,13 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static"
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
+    "bundle": "node scripts/build-bundle.js",
+    "bundle:scripts": "node scripts/build-scripts.js",
+    "bundle:all": "node scripts/build-all.js",
+    "bundle:watch": "nodemon scripts/build-bundle.js",
+    "build:complete": "npm run bundle:all && npm run build-storybook && npm run deploy-storybook",
+    "dev": "concurrently \"npm run storybook\" \"npm run bundle:watch\""
   },
   "eslintConfig": {
     "extends": [
@@ -50,8 +56,11 @@
     "@storybook/addon-onboarding": "^9.1.2",
     "@storybook/preset-create-react-app": "^9.1.2",
     "@storybook/react-webpack5": "^9.1.2",
+    "concurrently": "^8.2.2",
     "eslint-plugin-storybook": "^9.1.2",
     "gh-pages": "^6.1.1",
+    "glob": "^10.3.10",
+    "nodemon": "^3.0.3",
     "prop-types": "^15.8.1",
     "storybook": "^9.1.2",
     "webpack": "^5.101.2"
