@@ -1,0 +1,99 @@
+{
+  "storybook_url": "https://wonjinparkz.github.io/storybook/",
+  "version": "1.0.0",
+  "last_updated": "2025-01-19",
+  "components": {
+    "layout": {
+      "GovernmentHeader": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-governmentheader--docs",
+        "description": "정부 웹사이트 표준 헤더 컴포넌트",
+        "props": ["etcMenus", "siteInfo", "isLoggedIn", "myGovMenu", "menuStructure"],
+        "features": ["로그인/로그아웃", "메뉴 네비게이션", "반응형 디자인"]
+      },
+      "GovernmentFooter": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-governmentfooter--docs",
+        "description": "정부 웹사이트 표준 푸터 컴포넌트",
+        "props": ["quickLinks", "logoInfo", "contactInfo", "serviceLinks"],
+        "features": ["빠른 링크", "연락처 정보", "소셜 링크"]
+      }
+    },
+    "carousel": {
+      "FullBannerCarousel": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-fullbannercarousel--docs",
+        "description": "메인 배너 캐러셀",
+        "props": ["slides", "autoplayDelay", "speed", "loop"],
+        "features": ["자동 재생", "무한 루프", "반응형"]
+      },
+      "IconFeaturesCarousel": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-iconfeaturescarousel--docs",
+        "description": "아이콘 특징 캐러셀",
+        "props": ["title", "items", "autoplay", "autoplayDelay"],
+        "features": ["아이콘 지원", "자동 재생", "접근성"]
+      },
+      "ComplexFeaturesCarousel": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-complexfeaturescarousel--docs",
+        "description": "복합 특징 캐러셀",
+        "props": ["title", "intro", "cards", "autoplay"],
+        "features": ["카드 레이아웃", "소개 섹션", "고급 컨트롤"]
+      },
+      "ContentsCardCarousel": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-contentscarduousel--docs",
+        "description": "콘텐츠 카드 캐러셀",
+        "props": ["title", "cards", "showBadges", "moreLink"],
+        "features": ["배지 시스템", "더보기 링크", "카드 디자인"]
+      }
+    },
+    "pages": {
+      "StepProcessPage": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-z-page-stepprocesspage--docs",
+        "description": "동적 스텝 프로세스 페이지",
+        "props": ["type", "title", "steps", "stepContents", "buttons"],
+        "features": ["14가지 폼 필드", "동적 스텝", "상태 관리", "유효성 검사"],
+        "form_types": ["text", "email", "tel", "date", "select", "textarea", "file", "checkbox_single", "checkbox_group", "radio_group", "terms_box", "custom_html"],
+        "examples": {
+          "basic_form": "https://wonjinparkz.github.io/storybook/?path=/story/government-z-page-stepprocesspage--dynamic-form-basic",
+          "complex_form": "https://wonjinparkz.github.io/storybook/?path=/story/government-z-page-stepprocesspage--dynamic-form-complex",
+          "full_process": "https://wonjinparkz.github.io/storybook/?path=/story/government-z-page-stepprocesspage--full-step-process",
+          "success_page": "https://wonjinparkz.github.io/storybook/?path=/story/government-z-page-stepprocesspage--completed-process"
+        }
+      },
+      "ApplyPage": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-z-page-applypage--docs",
+        "description": "정부 서비스 신청 페이지",
+        "props": ["breadcrumb", "title", "sections", "apply_button"],
+        "features": ["신청 프로세스", "서류 안내", "관련 서비스"]
+      },
+      "ContentsPage": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-z-page-contentspage--docs",
+        "description": "일반 콘텐츠 페이지",
+        "props": ["breadcrumb", "page", "content"],
+        "features": ["브레드크럼", "동적 콘텐츠", "반응형"]
+      },
+      "ContentsListPage": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-z-page-contentslistpage--docs",
+        "description": "콘텐츠 목록 페이지",
+        "props": ["breadcrumb", "page", "items", "pagination"],
+        "features": ["페이지네이션", "정렬", "검색", "필터링"]
+      }
+    },
+    "content": {
+      "CardContents": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-x-content-cardcontents--docs",
+        "description": "카드형 콘텐츠 컴포넌트",
+        "props": ["title", "cards", "moreLink", "desktopLimit"],
+        "features": ["카드 레이아웃", "반응형", "더보기 링크"]
+      },
+      "TabContents": {
+        "url": "https://wonjinparkz.github.io/storybook/?path=/docs/government-x-content-tabcontents--docs",
+        "description": "탭형 콘텐츠 컴포넌트",
+        "props": ["title", "tabs", "moreLink"],
+        "features": ["탭 네비게이션", "동적 콘텐츠", "접근성"]
+      }
+    }
+  },
+  "usage": {
+    "direct_link": "각 컴포넌트 페이지의 URL을 직접 참조",
+    "iframe_embed": "iframe으로 임베드 가능",
+    "api_access": "이 JSON을 통한 프로그래매틱 접근"
+  }
+}

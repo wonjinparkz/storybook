@@ -1,3 +1,21 @@
+# Government Design System - React Components
+
+한국 정부 웹사이트를 위한 React 컴포넌트 라이브러리와 디자인 시스템입니다.
+
+## 🌐 Live Storybook
+**URL**: [https://wonjinparkz.github.io/storybook/](https://wonjinparkz.github.io/storybook/)
+
+## 📚 API Reference
+상세한 컴포넌트 문서는 [STORYBOOK_API.md](./STORYBOOK_API.md)를 참조하세요.
+
+## 🎯 주요 컴포넌트
+- **StepProcessPage**: 14가지 폼 필드를 지원하는 동적 스텝 프로세스
+- **Government Header/Footer**: 정부 웹사이트 표준 레이아웃
+- **Carousel Components**: 다양한 형태의 캐러셀 컴포넌트
+- **Content Components**: 카드, 탭, 사이드바 등 콘텐츠 컴포넌트
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
